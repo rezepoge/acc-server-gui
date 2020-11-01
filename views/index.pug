@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+
+  main
+    include serverSettings
+    include eventOptions
+    include assistRules
+
+  include buttons
+
+  footer
+    p= '© ' +  new Date().getFullYear() + ' Thomas Middelveld'

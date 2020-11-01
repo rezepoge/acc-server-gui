@@ -1,0 +1,70 @@
+#ServerSettings.Form
+  h3.FormTitle Server Settings
+  .FormRow
+    label(for="serverName") Server Name
+    input#serverName(type="text" maxLength="25" value=accConfig.settings.serverName)
+  .FormRow
+    label(for="password") Join Password
+    input#password(type="text" maxLength="25" value=accConfig.settings.password)
+  .FormRow
+    label(for="adminPassword") Admin Password
+    input#adminPassword(type="text" maxLength="25" value=accConfig.settings.adminPassword)
+  .FormRow
+    label(for="spectatorPassword") Spectator Password
+    input#spectatorPassword(type="text" maxLength="25" value=accConfig.settings.spectatorPassword)
+  .FormRow
+    label(for="centralEntryListPath") Central Entry List Path
+    input#centralEntryListPath(type="text" maxLength="999" value=accConfig.settings.centralEntryListPath)
+  br
+  .SubForm
+    .SubFormColumn
+      .FormRow
+        label(for="carGroup") Car Group
+        select#carGroup
+          each carGroup in settings.carGroups
+            option(value=carGroup, selected=(carGroup == accConfig.settings.carGroup))=carGroup
+      .SubFormRow
+        label(for="maxCarSlots") Max Car Slots
+        input#maxCarSlots(type="number" min="1" max="100" value=accConfig.settings.maxCarSlots)
+      .SubFormRow
+        label(for="trackMedalsRequirement") TR Requirement
+        input#trackMedalsRequirement(type="number" min="-1" max="100" value=accConfig.settings.trackMedalsRequirement)
+      .SubFormRow
+        label(for="safetyRatingRequirement") SA Requirement
+        input#safetyRatingRequirement(type="number" min="-1" max="100" value=accConfig.settings.safetyRatingRequirement)
+      .SubFormRow
+        label(for="racecraftRatingRequirement") RC Requirement
+        input#racecraftRatingRequirement(type="number" min="-1" max="100" value=accConfig.settings.racecraftRatingRequirement)
+      .SubFormRow
+        label(for="maxConnections") Max Connections
+        input#maxConnections(type="number" min="1" max="150" value=accConfig.configuration.maxConnections)
+      .SubFormRow
+        label(for="udpPort") UDP Port
+        input#udpPort(type="number" min="1" max="65535" value=accConfig.configuration.udpPort)
+      .SubFormRow
+        label(for="tcpPort") TCP Port
+        input#tcpPort(type="number" min="1" max="65535" value=accConfig.configuration.tcpPort)
+    .SubFormColumn
+      .SubFormRow
+        label(for="isRaceLocked") Race Locked
+        input#isRaceLocked(type="checkbox" checked=accConfig.settings.isRaceLocked == 1)
+      .SubFormRow
+        label(for="shortFormationLap") Short Formation Lap
+        input#shortFormationLap(type="checkbox" checked=accConfig.settings.shortFormationLap == 1)
+      .SubFormRow
+        label(for="dumpLeaderboards") Dumb Leaderboards
+        input#dumpLeaderboards(type="checkbox" checked=accConfig.settings.dumpLeaderboards == 1)
+      .SubFormRow
+        label(for="dumpEntryList") Dumb Entry List
+        input#dumpEntryList(type="checkbox" checked=accConfig.settings.dumpEntryList == 1)
+      .SubFormRow
+        label(for="randomizeTrackWhenEmpty") Randomize Track
+        input#randomizeTrackWhenEmpty(type="checkbox" checked=accConfig.settings.RandomizeTrack == 1)
+      .SubFormRow
+        label(for="allowAutoDQ") Auto DQ
+        input#allowAutoDQ(type="checkbox" checked=accConfig.settings.allowAutoDQ == 1)
+      .SubFormRow
+        label(for="formationLapType") Formation Lap
+        select#formationLapType
+          each formationLapType in settings.formationLapTypes
+            option(value=formationLapType.id, selected=(formationLapType.id == accConfig.settings.formationLapType))=formationLapType.displayname

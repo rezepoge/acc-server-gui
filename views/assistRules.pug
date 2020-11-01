@@ -1,0 +1,32 @@
+#AssistRules.Form
+  h3.FormTitle Assist Rules
+  .SubForm
+    .SubFormColumn
+      .SubFormRow
+        label(for="disableIdealLine") Ideal Line
+        input#disableIdealLine(type="checkbox" checked=accConfig.assistRules.disableIdealLine != 1)
+      .SubFormRow
+        label(for="disableAutosteer") Auto Steering
+        input#disableAutosteer(type="checkbox" checked=accConfig.assistRules.disableAutosteer != 1)
+      .SubFormRow
+        label(for="disableAutoPitLimiter") Auto Pit Limiter
+        input#disableAutoPitLimiter(type="checkbox" checked=accConfig.assistRules.disableAutoPitLimiter != 1)
+      .SubFormRow
+        label(for="disableAutoGear") Auto Shifting
+        input#disableAutoGear(type="checkbox" checked=accConfig.assistRules.disableAutoGear != 1)
+    .SubFormColumn
+      .SubFormRow
+        label(for="disableAutoEngineStart") Auto Start Engine
+        input#disableAutoEngineStart(type="checkbox" checked=accConfig.assistRules.disableAutoEngineStart != 1)
+      .SubFormRow
+        label(for="disableAutoWiper") Auto Wiper
+        input#disableAutoWiper(type="checkbox" checked=accConfig.assistRules.disableAutoWiper != 1)
+      .SubFormRow
+        label(for="disableAutoLights") Auto Lights
+        input#disableAutoLights(type="checkbox" checked=accConfig.assistRules.disableAutoLights != 1)
+      .SubFormRow
+        label(for="disableAutoClutch") Auto Clutch
+        input#disableAutoClutch(type="checkbox" checked=accConfig.assistRules.disableAutoClutch != 1)
+  .FormRow
+      label(for="stabilityControlLevelMax") Max Stability Control
+      input#stabilityControlLevelMax(type="number" min="0" max="100" value=accConfig.assistRules.stabilityControlLevelMax)
