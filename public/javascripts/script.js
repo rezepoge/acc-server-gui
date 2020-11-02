@@ -108,7 +108,7 @@ elems.startButton.addEventListener('click', ev => {
 });
 
 elems.stopButton.addEventListener('click', ev => {
-    fetch('/service/start');
+    fetch('/service/stop');
 });
 
 const getStatus = () => {
