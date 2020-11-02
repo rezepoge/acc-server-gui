@@ -122,7 +122,7 @@ const getStatus = () => {
 };
 
 getStatus();
-setInterval(getStatus, 5000);
+setInterval(getStatus, 15000);
 
 function mapElementValues() {
     return {
