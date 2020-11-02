@@ -117,7 +117,7 @@ const getStatus = () => {
         .then(response => response.json())
         .then(json => {
             elems.status.innerText = json.status;
-            elems.status.style.color = '#CCCCCC';
+            elems.status.style.color = '#FFFFFF';
         });
 };
 
