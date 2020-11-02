@@ -24,7 +24,7 @@ router.get('/stop', function (req, res, next) {
 });
 
 router.get('/status', function (req, res, next) {
-  const status = shell.exec('systemctl status acc-server.service | grep -Po \'( ? <= Active : ).*\'', {
+  const status = shell.exec('systemctl status acc-server.service | grep -Po \'(?<=Active: ).*\'', {
     silent: true
   }).stdout.replace(/(\r\n|\n|\r)/gm, '');
   res.json({
