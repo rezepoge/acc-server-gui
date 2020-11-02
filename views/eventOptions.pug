@@ -69,6 +69,11 @@
                 each sessionType in settings.sessionTypes
                   option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
             .SubFormRow
+              label(for="dayOfWeekend_" + index) Day of Weekend
+              select(id="dayOfWeekend_" + index)
+                each dayOfWeekend in settings.daysOfWeekend
+                  option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
+            .SubFormRow
               label(for="hourOfDay_" + index) Start Hour
               input(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)
             .SubFormRow

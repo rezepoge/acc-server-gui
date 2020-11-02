@@ -1,0 +1,35 @@
+const express = require('express');
+const router = express.Router();
+const shell = require('shelljs');
+
+router.get('/restart', function (req, res, next) {
+  shell.exec('systemctl restart acc-server.service', {
+    silent: true
+  });
+  res.status(200).send();
+});
+
+router.get('/start', function (req, res, next) {
+  shell.exec('systemctl start acc-server.service', {
+    silent: true
+  });
+  res.status(200).send();
+});
+
+router.get('/stop', function (req, res, next) {
+  shell.exec('systemctl stop acc-server.service', {
+    silent: true
+  });
+  res.status(200).send();
+});
+
+router.get('/status', function (req, res, next) {
+  const status = shell.exec('systemctl status acc-server.service | grep -Po \'( ? <= Active : ).*\'', {
+    silent: true
+  }).stdout.replace(/(\r\n|\n|\r)/gm, '');
+  res.json({
+    status: status
+  });
+});
+
+module.exports = router;

@@ -7,6 +7,9 @@ const elems = {
     sessions: document.getElementsByClassName('session'),
     saveButton: document.getElementById('save'),
     restartButton: document.getElementById('restart'),
+    startButton: document.getElementById('start'),
+    stopButton: document.getElementById('stop'),
+    status: document.getElementById('status'),
 };
 
 const inputElems = {
@@ -97,8 +100,29 @@ elems.saveButton.addEventListener('click', ev => {
 });
 
 elems.restartButton.addEventListener('click', ev => {
-    fetch('/restart');
+    fetch('/service/restart');
 });
+
+elems.startButton.addEventListener('click', ev => {
+    fetch('/service/start');
+});
+
+elems.stopButton.addEventListener('click', ev => {
+    fetch('/service/start');
+});
+
+const getStatus = () => {
+    elems.status.style.color = '#CCCCCC';
+    fetch('/service/status')
+        .then(response => response.json())
+        .then(json => {
+            elems.status.innerText = json.status;
+            elems.status.style.color = '#CCCCCC';
+        });
+};
+
+getStatus();
+setInterval(getStatus, 5000);
 
 function mapElementValues() {
     return {
@@ -135,6 +159,7 @@ function mapElementValues() {
 
             sessions: Array.from(elems.sessions).map((elem, index) => ({
                 sessionType: document.getElementById('sessionType_' + index).value,
+                dayOfWeekend: parseInt(document.getElementById('dayOfWeekend_' + index).value),
                 hourOfDay: parseInt(document.getElementById('hourOfDay_' + index).value),
                 timeMultiplier: parseInt(document.getElementById('timeMultiplier_' + index).value),
                 sessionDurationMinutes: parseInt(document.getElementById('sessionDurationMinutes_' + index).value)

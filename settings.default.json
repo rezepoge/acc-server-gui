@@ -17,6 +17,16 @@
         "name": "R",
         "displayname": "Race"
     }],
+    "daysOfWeekend": [{
+        "id": 1,
+        "displayname": "Friday"
+    }, {
+        "id": 2,
+        "displayname": "Saturday"
+    }, {
+        "id": 3,
+        "displayname": "Sunday"
+    }],
     "formationLapTypes": [{
             "id": 5,
             "displayname": "short"
