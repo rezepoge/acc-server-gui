@@ -28,6 +28,7 @@ const inputElems = {
     udpPort: document.getElementById('udpPort'),
     tcpPort: document.getElementById('tcpPort'),
 
+    registerToLobby: document.getElementById('registerToLobby'),
     isRaceLocked: document.getElementById('isRaceLocked'),
     shortFormationLap: document.getElementById('shortFormationLap'),
     dumpLeaderboards: document.getElementById('dumpLeaderboards'),
@@ -39,6 +40,8 @@ const inputElems = {
     track: document.getElementById('track'),
     preRaceWaitingTimeSeconds: document.getElementById('preRaceWaitingTimeSeconds'),
     sessionOverTimeSeconds: document.getElementById('sessionOverTimeSeconds'),
+    postQualySeconds: document.getElementById('postQualySeconds'),
+    postRaceSeconds: document.getElementById('postRaceSeconds'),
 
     pitWindowLengthSec: document.getElementById('pitWindowLengthSec'),
     driverStintTimeSec: document.getElementById('driverStintTimeSec'),
@@ -151,6 +154,8 @@ function mapElementValues() {
             track: inputElems.track.value,
             preRaceWaitingTimeSeconds: parseInt(inputElems.preRaceWaitingTimeSeconds.value),
             sessionOverTimeSeconds: parseInt(inputElems.sessionOverTimeSeconds.value),
+            postQualySeconds: parseInt(inputElems.postQualySeconds.value),
+            postRaceSeconds: parseInt(inputElems.postRaceSeconds.value),
 
             ambientTemp: parseInt(inputElems.ambientTemp.value),
             cloudLevel: parseFloat(inputElems.cloudLevel.value),
@@ -189,6 +194,7 @@ function mapElementValues() {
             stabilityControlLevelMax: parseInt(inputElems.stabilityControlLevelMax.value),
         },
         configuration: {
+            registerToLobby: inputElems.registerToLobby.checked === true ? 1 : 0,
             maxConnections: parseInt(inputElems.maxConnections.value),
             udpPort: parseInt(inputElems.udpPort.value),
             tcpPort: parseInt(inputElems.tcpPort.value)

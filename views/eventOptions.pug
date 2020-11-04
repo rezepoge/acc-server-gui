@@ -10,23 +10,29 @@
       h4 Miscellaneous
       .SubFormRow
         label(for="preRaceWaitingTimeSeconds") Pre Race Wait Time
-        input#preRaceWaitingTimeSeconds(type="number" min="30" max="900" value=accConfig.event.preRaceWaitingTimeSeconds)
+        input#preRaceWaitingTimeSeconds(type="number" min="30" max="240" title="Time in Seconds" value=accConfig.event.preRaceWaitingTimeSeconds)
       .SubFormRow
         label(for="sessionOverTimeSeconds") Session Over Time
-        input#sessionOverTimeSeconds(type="number" min="30" max="900" value=accConfig.event.sessionOverTimeSeconds)
+        input#sessionOverTimeSeconds(type="number" min="60" max="480" title="Time in Seconds" value=accConfig.event.sessionOverTimeSeconds)
+      .SubFormRow
+        label(for="postQualySeconds") Post Qualy Time
+        input#postQualySeconds(type="number" min="10" max="60" title="Time in Seconds" value=accConfig.event.postQualySeconds)
+      .SubFormRow
+        label(for="postRaceSeconds") Post Race Time
+        input#postRaceSeconds(type="number" min="0" max="60" title="Time in Seconds" value=accConfig.event.postRaceSeconds)
       h4 Pitstop
       .SubFormRow
         label(for="pitWindowLengthSec") Pit Window Length
-        input#pitWindowLengthSec(type="number" min="30" max="9999" value=accConfig.eventRules.pitWindowLengthSec)
+        input#pitWindowLengthSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.pitWindowLengthSec)
       .SubFormRow
         label(for="driverStintTimeSec") Driver Stint Time
-        input#driverStintTimeSec(type="number" min="30" max="9999" value=accConfig.eventRules.driverStintTimeSec)
+        input#driverStintTimeSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.driverStintTimeSec)
       .SubFormRow
         label(for="mandatoryPitstopCount") Mandatory Pitstop Count
         input#mandatoryPitstopCount(type="number" min="0" max="9" value=accConfig.eventRules.mandatoryPitstopCount)
       .SubFormRow
         label(for="maxTotalDrivingTime") Max Total Driving Time
-        input#maxTotalDrivingTime(type="number" min="-1" max="9999" value=accConfig.eventRules.maxTotalDrivingTime)
+        input#maxTotalDrivingTime(type="number" min="-1" max="9999" title="Time in Seconds" value=accConfig.eventRules.maxTotalDrivingTime)
       .SubFormRow
         label(for="maxDriversCount") Max Drivers Count
         input#maxDriversCount(type="number" min="1" max="9" value=accConfig.eventRules.maxDriversCount)
@@ -81,6 +87,6 @@
               input(id="timeMultiplier_" + index type="number" min="0" max="24" value=session.timeMultiplier)
             .SubFormRow
               label(for="sessionDurationMinutes_" + index) Duration
-              input(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" value=session.sessionDurationMinutes)
+              input(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" title="Time in Minutes" value=session.sessionDurationMinutes)
       button#addSession Add
       button#removeSession Remove

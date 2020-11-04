@@ -24,6 +24,9 @@ const load = () => {
 
 const save = (newconfig) => {
     config = newconfig;
+    newconfig.settings.configVersion = 1;
+    newconfig.configuration.configVersion = 1;
+    newconfig.event.configVersion = 1;
     fs.writeFileSync(files.settings, JSON.stringify(newconfig.settings, undefined, 4));
     fs.writeFileSync(files.configuration, JSON.stringify(newconfig.configuration, undefined, 4));
     fs.writeFileSync(files.event, JSON.stringify(newconfig.event, undefined, 4));

@@ -28,13 +28,13 @@
         input#maxCarSlots(type="number" min="1" max="100" value=accConfig.settings.maxCarSlots)
       .SubFormRow
         label(for="trackMedalsRequirement") TR Requirement
-        input#trackMedalsRequirement(type="number" min="-1" max="100" value=accConfig.settings.trackMedalsRequirement)
+        input#trackMedalsRequirement(type="number" min="0" max="3" title="Track Medals" value=accConfig.settings.trackMedalsRequirement)
       .SubFormRow
         label(for="safetyRatingRequirement") SA Requirement
-        input#safetyRatingRequirement(type="number" min="-1" max="100" value=accConfig.settings.safetyRatingRequirement)
+        input#safetyRatingRequirement(type="number" min="-1" max="99" title="Safety Rating" value=accConfig.settings.safetyRatingRequirement)
       .SubFormRow
         label(for="racecraftRatingRequirement") RC Requirement
-        input#racecraftRatingRequirement(type="number" min="-1" max="100" value=accConfig.settings.racecraftRatingRequirement)
+        input#racecraftRatingRequirement(type="number" min="-1" max="99" title="Race Craft Rating" value=accConfig.settings.racecraftRatingRequirement)
       .SubFormRow
         label(for="maxConnections") Max Connections
         input#maxConnections(type="number" min="1" max="150" value=accConfig.configuration.maxConnections)
@@ -45,6 +45,9 @@
         label(for="tcpPort") TCP Port
         input#tcpPort(type="number" min="1" max="65535" value=accConfig.configuration.tcpPort)
     .SubFormColumn
+      .SubFormRow
+        label(for="registerToLobby") Register to Lobby
+        input#registerToLobby(type="checkbox" checked=accConfig.settings.registerToLobby == 1)
       .SubFormRow
         label(for="isRaceLocked") Race Locked
         input#isRaceLocked(type="checkbox" checked=accConfig.settings.isRaceLocked == 1)
