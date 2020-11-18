@@ -1,0 +1,204 @@
+{
+    "carGroups": [
+        "FreeForAll",
+        "GT3",
+        "GT4",
+        "Cup",
+        "ST"
+    ],
+    "sessionTypes": [{
+        "name": "P",
+        "displayname": "Practice"
+    }, {
+        "name": "Q",
+        "displayname": "Qualifying"
+    }, {
+        "name": "R",
+        "displayname": "Race"
+    }],
+    "daysOfWeekend": [{
+        "id": 1,
+        "displayname": "Friday"
+    }, {
+        "id": 2,
+        "displayname": "Saturday"
+    }, {
+        "id": 3,
+        "displayname": "Sunday"
+    }],
+    "formationLapTypes": [{
+            "id": 5,
+            "displayname": "short"
+        },
+        {
+            "id": 4,
+            "displayname": "one free"
+        },
+        {
+            "id": 3,
+            "displayname": "default"
+        },
+        {
+            "id": 1,
+            "displayname": "old limiter lap"
+        },
+        {
+            "id": 0,
+            "displayname": "free"
+        }
+    ],
+    "tracks": [
+        {
+            "name": "monza",
+            "displayname": "Monza 2018"
+        },
+        {
+            "name": "zolder",
+            "displayname": "Zolder 2018"
+        },
+        {
+            "name": "brands_hatch",
+            "displayname": "Brands Hatch 2018"
+        },
+        {
+            "name": "silverstone",
+            "displayname": "Silverstone 2018"
+        },
+        {
+            "name": "paul_ricard",
+            "displayname": "Paul Ricard 2018"
+        },
+        {
+            "name": "misano",
+            "displayname": "Misano 2018"
+        },
+        {
+            "name": "spa",
+            "displayname": "Spa 2018"
+        },
+        {
+            "name": "nurburgring",
+            "displayname": "Nurburgring 2018"
+        },
+        {
+            "name": "barcelona",
+            "displayname": "Barcelona 2018"
+        },
+        {
+            "name": "hungaroring",
+            "displayname": "Hungaroring 2018"
+        },
+        {
+            "name": "zandvoort",
+            "displayname": "Zandvoort 2018"
+        },
+        {
+            "name": "monza_2019",
+            "displayname": "Monza 2019"
+        },
+        {
+            "name": "zolder_2019",
+            "displayname": "Zolder 2019"
+        },
+        {
+            "name": "brands_hatch_2019",
+            "displayname": "Brands Hatch 2019"
+        },
+        {
+            "name": "silverstone_2019",
+            "displayname": "Silverstone 2019"
+        },
+        {
+            "name": "paul_ricard_2019",
+            "displayname": "Paul Ricard 2019"
+        },
+        {
+            "name": "misano_2019",
+            "displayname": "Misano 2019"
+        },
+        {
+            "name": "spa_2019",
+            "displayname": "Spa 2019"
+        },
+        {
+            "name": "nurburgring_2019",
+            "displayname": "Nurburgring 2019"
+        },
+        {
+            "name": "barcelona_2019",
+            "displayname": "Barcelona 2019"
+        },
+        {
+            "name": "hungaroring_2019",
+            "displayname": "Hungaroring 2019"
+        },
+        {
+            "name": "zandvoort_2019",
+            "displayname": "Zandvoort 2019"
+        },
+        {
+            "name": "kyalami_2019",
+            "displayname": "Kyalami 2019"
+        },
+        {
+            "name": "mount_panorama_2019",
+            "displayname": "Mount Panorama 2019"
+        },
+        {
+            "name": "suzuka_2019",
+            "displayname": "Suzuka 2019"
+        },
+        {
+            "name": "laguna_seca_2019",
+            "displayname": "Laguna Seca 2019"
+        },
+        {
+            "name": "monza_2020",
+            "displayname": "Monza 2020"
+        },
+        {
+            "name": "zolder_2020",
+            "displayname": "Zolder 2020"
+        },
+        {
+            "name": "brands_hatch_2020",
+            "displayname": "Brands Hatch 2020"
+        },
+        {
+            "name": "silverstone_2020",
+            "displayname": "Silverstone 2020"
+        },
+        {
+            "name": "paul_ricard_2020",
+            "displayname": "Paul Ricard 2020"
+        },
+        {
+            "name": "misano_2020",
+            "displayname": "Misano 2020"
+        },
+        {
+            "name": "spa_2020",
+            "displayname": "Spa 2020"
+        },
+        {
+            "name": "nurburgring_2020",
+            "displayname": "Nurburgring 2020"
+        },
+        {
+            "name": "barcelona_2020",
+            "displayname": "Barcelona 2020"
+        },
+        {
+            "name": "hungaroring_2020",
+            "displayname": "Hungaroring 2020"
+        },
+        {
+            "name": "zandvoort_2020",
+            "displayname": "Zandvord 2020"
+        },
+        {
+            "name": "imola_2020",
+            "displayname": "Imola 2020"
+        }
+    ]
+}

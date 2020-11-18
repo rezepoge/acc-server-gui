@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const settings = require('../src/Settings').get();
+const settingsProvider = require('../src/Settings');
 const accConfig = require('../src/ConfigProvider')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Assetto Corsa Competizione Server GUI',
-    settings: settings,
+    settings: settingsProvider.getSettings(),
+    basics: settingsProvider.getBasics(),
     accConfig: accConfig.get()
   });
 });

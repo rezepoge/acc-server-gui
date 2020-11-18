@@ -21,7 +21,7 @@
       .FormRow
         label(for="carGroup") Car Group
         select#carGroup
-          each carGroup in settings.carGroups
+          each carGroup in basics.carGroups
             option(value=carGroup, selected=(carGroup == accConfig.settings.carGroup))=carGroup
       .SubFormRow
         label(for="maxCarSlots") Max Car Slots
@@ -69,5 +69,5 @@
       .SubFormRow
         label(for="formationLapType") Formation Lap
         select#formationLapType
-          each formationLapType in settings.formationLapTypes
+          each formationLapType in basics.formationLapTypes
             option(value=formationLapType.id, selected=(formationLapType.id == accConfig.settings.formationLapType))=formationLapType.displayname

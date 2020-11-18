@@ -5,7 +5,7 @@
       .SubFormRow
         label(for="track") Track
         select#track
-          each track in settings.tracks
+          each track in basics.tracks
             option(value=track.name, selected=(track.name == accConfig.event.track))=track.displayname
       h4 Miscellaneous
       .SubFormRow
@@ -72,12 +72,12 @@
             .SubFormRow
               label(for="sessionType_" + index) Type
               select(id="sessionType_" + index)
-                each sessionType in settings.sessionTypes
+                each sessionType in basics.sessionTypes
                   option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
             .SubFormRow
               label(for="dayOfWeekend_" + index) Day of Weekend
               select(id="dayOfWeekend_" + index)
-                each dayOfWeekend in settings.daysOfWeekend
+                each dayOfWeekend in basics.daysOfWeekend
                   option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
             .SubFormRow
               label(for="hourOfDay_" + index) Start Hour
