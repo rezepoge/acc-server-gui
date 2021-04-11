@@ -2,16 +2,16 @@
   h3.FormTitle Server Settings
   .FormRow
     label(for="serverName") Server Name
-    input#serverName(type="text" maxLength="25" value=accConfig.settings.serverName)
+    input#serverName(type="text" maxLength="64" value=accConfig.settings.serverName)
   .FormRow
     label(for="password") Join Password
-    input#password(type="text" maxLength="25" value=accConfig.settings.password)
+    input#password(type="text" maxLength="32" value=accConfig.settings.password)
   .FormRow
     label(for="adminPassword") Admin Password
-    input#adminPassword(type="text" maxLength="25" value=accConfig.settings.adminPassword)
+    input#adminPassword(type="text" maxLength="32" value=accConfig.settings.adminPassword)
   .FormRow
     label(for="spectatorPassword") Spectator Password
-    input#spectatorPassword(type="text" maxLength="25" value=accConfig.settings.spectatorPassword)
+    input#spectatorPassword(type="text" maxLength="32" value=accConfig.settings.spectatorPassword)
   .FormRow
     label(for="centralEntryListPath") Central Entry List Path
     input#centralEntryListPath(type="text" maxLength="999" value=accConfig.settings.centralEntryListPath)

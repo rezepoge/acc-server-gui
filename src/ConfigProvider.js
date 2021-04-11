@@ -24,7 +24,9 @@ const load = () => {
 
 const save = (newconfig) => {
     config = newconfig;
+    newconfig.settings.ignorePrematureDisconnects = 0;
     newconfig.settings.configVersion = 1;
+    newconfig.configuration.lanDiscovery = 1;
     newconfig.configuration.configVersion = 1;
     newconfig.event.configVersion = 1;
     fs.writeFileSync(files.settings, JSON.stringify(newconfig.settings, undefined, 4), {encoding: 'utf16le'});
