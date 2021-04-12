@@ -156,6 +156,16 @@ input[type="text"] {
   margin: 10px;
 }
 
-#status {
+#status,
+#logs {
   transition-duration: 200ms;
+}
+
+#logs {
+  height: 2em;
+  overflow: hidden;
+}
+
+#logs:hover {
+  height: auto;
 }

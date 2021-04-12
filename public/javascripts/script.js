@@ -10,6 +10,7 @@ const elems = {
     startButton: document.getElementById('start'),
     stopButton: document.getElementById('stop'),
     status: document.getElementById('status'),
+    logs: document.getElementById('logs'),
 };
 
 const inputElems = {
@@ -85,6 +86,7 @@ elems.removeSessionButton.addEventListener('click', ev => {
 });
 
 elems.saveButton.addEventListener('click', ev => {
+    document.body.style.cursor = 'progress';
     fetch('save', {
             method: 'POST',
             headers: {
@@ -93,7 +95,6 @@ elems.saveButton.addEventListener('click', ev => {
             body: JSON.stringify(mapElementValues())
         })
         .then(() => {
-            document.body.style.cursor = 'progress';
             setTimeout(() => {
                 document.body.style.cursor = 'default';
                 window.location.href = '/';
@@ -103,19 +104,31 @@ elems.saveButton.addEventListener('click', ev => {
 });
 
 elems.restartButton.addEventListener('click', ev => {
-    fetch('/service/restart');
+    document.body.style.cursor = 'progress';
+    fetch('/service/restart').then(() => {
+        alert('command to restart the server was sent');
+        document.body.style.cursor = 'default';
+    });
 });
 
 elems.startButton.addEventListener('click', ev => {
-    fetch('/service/start');
+    document.body.style.cursor = 'progress';
+    fetch('/service/start').then(() => {
+        alert('command to start the server was sent');
+        document.body.style.cursor = 'default';
+    });
 });
 
 elems.stopButton.addEventListener('click', ev => {
-    fetch('/service/stop');
+    document.body.style.cursor = 'progress';
+    fetch('/service/stop').then(() => {
+        alert('command to stop the server was sent');
+        document.body.style.cursor = 'default';
+    });
 });
 
 const getStatus = () => {
-    elems.status.style.color = '#CCCCCC';
+    elems.status.style.color = '#AAAAAA';
     fetch('/service/status')
         .then(response => response.json())
         .then(json => {
@@ -124,8 +137,21 @@ const getStatus = () => {
         });
 };
 
+const getLogs = () => {
+    elems.logs.style.color = '#AAAAAA';
+    fetch('/service/log')
+        .then(response => response.json())
+        .then(json => {
+            elems.logs.innerText = json.logs;
+            elems.logs.style.color = '#FFFFFF';
+        });
+};
+
 getStatus();
-setInterval(getStatus, 15000);
+setInterval(getStatus, 7500);
+
+getLogs();
+setInterval(getLogs, 15000);
 
 function mapElementValues() {
     return {

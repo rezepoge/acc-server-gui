@@ -28,7 +28,16 @@ router.get('/status', function (req, res, next) {
     silent: true
   }).stdout.replace(/(\r\n|\n|\r)/gm, '');
   res.json({
-    status: status
+    status
+  });
+});
+
+router.get('/log', function (req, res, next) {
+  const logs = shell.exec('journalctl -u status acc-server.service -n 100', {
+    silent: true
+  }).stdout.replace(/(\r\n|\n|\r)/gm, '</br>');
+  res.json({
+    logs
   });
 });
 
