@@ -142,7 +142,7 @@ const getLogs = () => {
     fetch('/service/log')
         .then(response => response.json())
         .then(json => {
-            elems.logs.innerText = json.logs;
+            elems.logs.innerHTML = json.logs;
             elems.logs.style.color = '#FFFFFF';
         });
 };
