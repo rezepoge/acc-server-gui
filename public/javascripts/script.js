@@ -142,8 +142,11 @@ const getLogs = () => {
     fetch('/service/log')
         .then(response => response.json())
         .then(json => {
+            const scrollToBottom = elems.logs.scrollTop == elems.logs.scrollHeight - elems.logs.offsetHeight;
             elems.logs.innerHTML = json.logs;
-            elems.logs.scrollTop = elems.logs.scrollHeight;
+            if (scrollToBottom) {
+                elems.logs.scrollTop = elems.logs.scrollHeight;
+            }
             elems.logs.style.color = '#FFFFFF';
         });
 };
