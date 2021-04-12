@@ -33,7 +33,7 @@ router.get('/status', function (req, res, next) {
 });
 
 router.get('/log', function (req, res, next) {
-  const logs = shell.exec('journalctl -u acc-server.service -n 1000 | grep -v \'not enough CPU power\'', {
+  const logs = shell.exec('journalctl -u acc-server.service -n 1999 | grep -vP \'not enough CPU power|-- Logs begin at\'', {
     silent: true
   }).stdout.replace(/(\r\n|\n|\r)/gm, '</br>');
   res.json({

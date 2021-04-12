@@ -162,10 +162,10 @@ input[type="text"] {
 }
 
 #logs {
-  height: 2em;
-  overflow: hidden;
-}
-
-#logs:hover {
-  height: auto;
+  font-family: Consolas, monospace;
+  text-align: left;
+  width: 50%;
+  margin: 24px auto;
+  padding: 8px;
+  background-color: #0006;
 }
