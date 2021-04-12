@@ -33,7 +33,7 @@ router.get('/status', function (req, res, next) {
 });
 
 router.get('/log', function (req, res, next) {
-  const logs = shell.exec('journalctl -u status acc-server.service -n 100', {
+  const logs = shell.exec('journalctl -u acc-server.service -n 100', {
     silent: true
   }).stdout.replace(/(\r\n|\n|\r)/gm, '</br>');
   res.json({
