@@ -87,7 +87,7 @@ input[type="text"] {
 
 .session:not(:last-of-type) {
   padding-bottom: 5px;
-  border-bottom: 2px solid #FFFFFF22;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .session:not(:first-of-type) {
@@ -144,7 +144,7 @@ input[type="text"] {
 
 .FormRow:hover,
 .SubFormRow:hover {
-  background-color: #FFFFFF11;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #Buttons {
@@ -167,5 +167,7 @@ input[type="text"] {
   width: 50%;
   margin: 24px auto;
   padding: 8px;
-  background-color: #0006;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-height: 30em;
+overflow-y: scroll;
 }

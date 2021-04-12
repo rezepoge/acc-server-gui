@@ -143,6 +143,7 @@ const getLogs = () => {
         .then(response => response.json())
         .then(json => {
             elems.logs.innerHTML = json.logs;
+            elems.logs.scrollTop = elems.logs.scrollHeight;
             elems.logs.style.color = '#FFFFFF';
         });
 };
