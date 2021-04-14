@@ -6,21 +6,21 @@ router.get('/restart', function (req, res, next) {
   shell.exec('systemctl restart acc-server.service', {
     silent: true
   });
-  res.status(200).send();
+  res.set('Cache-Control', 'no-store').status(200).send();
 });
 
 router.get('/start', function (req, res, next) {
   shell.exec('systemctl start acc-server.service', {
     silent: true
   });
-  res.status(200).send();
+  res.set('Cache-Control', 'no-store').status(200).send();
 });
 
 router.get('/stop', function (req, res, next) {
   shell.exec('systemctl stop acc-server.service', {
     silent: true
   });
-  res.status(200).send();
+  res.set('Cache-Control', 'no-store').status(200).send();
 });
 
 router.get('/status', function (req, res, next) {
