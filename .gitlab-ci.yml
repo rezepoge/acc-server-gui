@@ -1,0 +1,10 @@
+deploy_job:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+  script:
+    - DIR=$(pwd)/
+    - INSTALL_DIR=/opt/acc-server-gui
+    - rsync -rvu --delete --exclude-from=$DIR/.gitignore $DIR $INSTALL_DIR && \
+    - cd $INSTALL_DIR && \
+    - /usr/include/node-12/bin/npm install && \
+    - sudo /bin/systemctl restart acc-server-gui.service

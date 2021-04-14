@@ -199,6 +199,18 @@
         {
             "name": "imola_2020",
             "displayname": "Imola 2020"
+        },
+        {
+            "name": "oulton_park_2019",
+            "displayname": "Oulton Park 2019"
+        },
+        {
+            "name": "donington_2019",
+            "displayname": "Donington Park 2019"
+        },
+        {
+            "name": "snetterton_2019",
+            "displayname": "Snetterton 2019"
         }
     ]
 }
