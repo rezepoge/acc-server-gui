@@ -105,25 +105,28 @@ elems.saveButton.addEventListener('click', ev => {
 
 elems.restartButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
+    elems.restartButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
     fetch('/service/restart').then(() => {
-        alert('command to restart the server was sent');
         document.body.style.cursor = 'default';
+        elems.restartButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
     });
 });
 
 elems.startButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
+    elems.startButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
     fetch('/service/start').then(() => {
-        alert('command to start the server was sent');
         document.body.style.cursor = 'default';
+        elems.startButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
     });
 });
 
 elems.stopButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
+    elems.stopButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
     fetch('/service/stop').then(() => {
-        alert('command to stop the server was sent');
         document.body.style.cursor = 'default';
+        elems.stopButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
     });
 });
 
@@ -132,9 +135,10 @@ const getStatus = () => {
     fetch('/service/status')
         .then(response => response.json())
         .then(json => {
+            if (!json || !json.status) return;
             elems.status.innerText = json.status;
             elems.status.style.color = '#FFFFFF';
-        });
+        }).catch(console.error);
 };
 
 const getLogs = () => {
@@ -142,13 +146,14 @@ const getLogs = () => {
     fetch('/service/log')
         .then(response => response.json())
         .then(json => {
+            if (!json || !json.logs) return;
             const scrollToBottom = elems.logs.scrollTop == elems.logs.scrollHeight - elems.logs.offsetHeight;
             elems.logs.innerHTML = json.logs;
             if (scrollToBottom) {
                 elems.logs.scrollTop = elems.logs.scrollHeight;
             }
             elems.logs.style.color = '#FFFFFF';
-        });
+        }).catch(console.error);
 };
 
 getStatus();

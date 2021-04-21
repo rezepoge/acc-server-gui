@@ -7,86 +7,90 @@
         select#track
           each track in basics.tracks
             option(value=track.name, selected=(track.name == accConfig.event.track))=track.displayname
-      h4 Miscellaneous
-      .SubFormRow
-        label(for="preRaceWaitingTimeSeconds") Pre Race Wait Time
-        input#preRaceWaitingTimeSeconds(type="number" min="30" max="240" title="Time in Seconds" value=accConfig.event.preRaceWaitingTimeSeconds)
-      .SubFormRow
-        label(for="sessionOverTimeSeconds") Session Over Time
-        input#sessionOverTimeSeconds(type="number" min="60" max="480" title="Time in Seconds" value=accConfig.event.sessionOverTimeSeconds)
-      .SubFormRow
-        label(for="postQualySeconds") Post Qualy Time
-        input#postQualySeconds(type="number" min="10" max="60" title="Time in Seconds" value=accConfig.event.postQualySeconds)
-      .SubFormRow
-        label(for="postRaceSeconds") Post Race Time
-        input#postRaceSeconds(type="number" min="0" max="60" title="Time in Seconds" value=accConfig.event.postRaceSeconds)
-      h4 Pitstop
-      .SubFormRow
-        label(for="pitWindowLengthSec") Pit Window Length
-        input#pitWindowLengthSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.pitWindowLengthSec)
-      .SubFormRow
-        label(for="driverStintTimeSec") Driver Stint Time
-        input#driverStintTimeSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.driverStintTimeSec)
-      .SubFormRow
-        label(for="mandatoryPitstopCount") Mandatory Pitstop Count
-        input#mandatoryPitstopCount(type="number" min="0" max="9" value=accConfig.eventRules.mandatoryPitstopCount)
-      .SubFormRow
-        label(for="maxTotalDrivingTime") Max Total Driving Time
-        input#maxTotalDrivingTime(type="number" min="-1" max="9999" title="Time in Seconds" value=accConfig.eventRules.maxTotalDrivingTime)
-      .SubFormRow
-        label(for="maxDriversCount") Max Drivers Count
-        input#maxDriversCount(type="number" min="1" max="9" value=accConfig.eventRules.maxDriversCount)
-      .SubFormRow
-        label(for="isRefuellingAllowedInRace") Refuelling Allowed
-        input#isRefuellingAllowedInRace(type="checkbox" checked=accConfig.eventRules.isRefuellingAllowedInRace == 1)
-      .SubFormRow
-        label(for="isRefuellingTimeFixed") Refuelling Time Fixed
-        input#isRefuellingTimeFixed(type="checkbox" checked=accConfig.eventRules.isRefuellingTimeFixed == 1)
-      .SubFormRow
-        label(for="isMandatoryPitstopRefuellingRequired") Refuelling Required
-        input#isMandatoryPitstopRefuellingRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopRefuellingRequired == 1)
-      .SubFormRow
-        label(for="isMandatoryPitstopTyreChangeRequired") Tyre Change Required
-        input#isMandatoryPitstopTyreChangeRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopTyreChangeRequired == 1)
-      .SubFormRow
-        label(for="isMandatoryPitstopSwapDriverRequired") Driver Swap Required
-        input#isMandatoryPitstopSwapDriverRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopSwapDriverRequired == 1)
-      h4 Weather
-      .SubFormRow
-        label(for="ambientTemp") Avg. Ambient Temp
-        input#ambientTemp(type="number" min="-10" max="45" value=accConfig.event.ambientTemp)
-      .SubFormRow
-        label(for="cloudLevel") Cloud Level
-        input#cloudLevel(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.cloudLevel)
-      .SubFormRow
-        label(for="rain") Rain Level
-        input#rain(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.rain)
-      .SubFormRow
-        label(for="weatherRandomness") Weather Randomness
-        input#weatherRandomness(type="number" min="0" max="7" value=accConfig.event.weatherRandomness)
+      fieldset
+        legend  Miscellaneous
+        .SubFormRow
+          label(for="preRaceWaitingTimeSeconds") Pre Race Wait Time
+          input#preRaceWaitingTimeSeconds(type="number" min="30" max="600" title="Time in Seconds" value=accConfig.event.preRaceWaitingTimeSeconds)
+        .SubFormRow
+          label(for="sessionOverTimeSeconds") Session Over Time
+          input#sessionOverTimeSeconds(type="number" min="60" max="600" title="Time in Seconds" value=accConfig.event.sessionOverTimeSeconds)
+        .SubFormRow
+          label(for="postQualySeconds") Post Qualy Time
+          input#postQualySeconds(type="number" min="10" max="600" title="Time in Seconds" value=accConfig.event.postQualySeconds)
+        .SubFormRow
+          label(for="postRaceSeconds") Post Race Time
+          input#postRaceSeconds(type="number" min="0" max="600" title="Time in Seconds" value=accConfig.event.postRaceSeconds)
+      fieldset
+        legend Pitstop
+        .SubFormRow
+          label(for="pitWindowLengthSec") Pit Window Length
+          input#pitWindowLengthSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.pitWindowLengthSec)
+        .SubFormRow
+          label(for="driverStintTimeSec") Driver Stint Time
+          input#driverStintTimeSec(type="number" min="30" max="9999" title="Time in Seconds" value=accConfig.eventRules.driverStintTimeSec)
+        .SubFormRow
+          label(for="mandatoryPitstopCount") Mandatory Pitstop Count
+          input#mandatoryPitstopCount(type="number" min="0" max="9" value=accConfig.eventRules.mandatoryPitstopCount)
+        .SubFormRow
+          label(for="maxTotalDrivingTime") Max Total Driving Time
+          input#maxTotalDrivingTime(type="number" min="-1" max="9999" title="Time in Seconds" value=accConfig.eventRules.maxTotalDrivingTime)
+        .SubFormRow
+          label(for="maxDriversCount") Max Drivers Count
+          input#maxDriversCount(type="number" min="1" max="9" value=accConfig.eventRules.maxDriversCount)
+        .SubFormRow
+          label(for="isRefuellingAllowedInRace") Refuelling Allowed
+          input#isRefuellingAllowedInRace(type="checkbox" checked=accConfig.eventRules.isRefuellingAllowedInRace == 1)
+        .SubFormRow
+          label(for="isRefuellingTimeFixed") Refuelling Time Fixed
+          input#isRefuellingTimeFixed(type="checkbox" checked=accConfig.eventRules.isRefuellingTimeFixed == 1)
+        .SubFormRow
+          label(for="isMandatoryPitstopRefuellingRequired") Refuelling Required
+          input#isMandatoryPitstopRefuellingRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopRefuellingRequired == 1)
+        .SubFormRow
+          label(for="isMandatoryPitstopTyreChangeRequired") Tyre Change Required
+          input#isMandatoryPitstopTyreChangeRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopTyreChangeRequired == 1)
+        .SubFormRow
+          label(for="isMandatoryPitstopSwapDriverRequired") Driver Swap Required
+          input#isMandatoryPitstopSwapDriverRequired(type="checkbox" checked=accConfig.eventRules.isMandatoryPitstopSwapDriverRequired == 1)
+      fieldset
+        legend  Weather
+        .SubFormRow
+          label(for="ambientTemp") Avg. Ambient Temp
+          input#ambientTemp(type="number" min="-10" max="45" value=accConfig.event.ambientTemp)
+        .SubFormRow
+          label(for="cloudLevel") Cloud Level
+          input#cloudLevel(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.cloudLevel)
+        .SubFormRow
+          label(for="rain") Rain Level
+          input#rain(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.rain)
+        .SubFormRow
+          label(for="weatherRandomness") Weather Randomness
+          input#weatherRandomness(type="number" min="0" max="7" value=accConfig.event.weatherRandomness)
     .SubFormColumn
-      h4#sess Sessions
-      #sessions
-        each session, index in accConfig.event.sessions
-          .session
-            .SubFormRow
-              label(for="sessionType_" + index) Type
-              select(id="sessionType_" + index)
-                each sessionType in basics.sessionTypes
-                  option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
-            .SubFormRow
-              label(for="dayOfWeekend_" + index) Day of Weekend
-              select(id="dayOfWeekend_" + index)
-                each dayOfWeekend in basics.daysOfWeekend
-                  option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
-            .SubFormRow
-              label(for="hourOfDay_" + index) Start Hour
-              input(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)
-            .SubFormRow
-              label(for="timeMultiplier_" + index) Time Multiplier
-              input(id="timeMultiplier_" + index type="number" min="0" max="24" value=session.timeMultiplier)
-            .SubFormRow
-              label(for="sessionDurationMinutes_" + index) Duration
-              input(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" title="Time in Minutes" value=session.sessionDurationMinutes)
-      button#addSession Add
-      button#removeSession Remove
+      fieldset
+        legend Sessions
+        #sessions
+          each session, index in accConfig.event.sessions
+            .session
+              .SubFormRow
+                label(for="sessionType_" + index) Type
+                select(id="sessionType_" + index)
+                  each sessionType in basics.sessionTypes
+                    option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
+              .SubFormRow
+                label(for="dayOfWeekend_" + index) Day of Weekend
+                select(id="dayOfWeekend_" + index)
+                  each dayOfWeekend in basics.daysOfWeekend
+                    option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
+              .SubFormRow
+                label(for="hourOfDay_" + index) Start Hour
+                input(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)
+              .SubFormRow
+                label(for="timeMultiplier_" + index) Time Multiplier
+                input(id="timeMultiplier_" + index type="number" min="0" max="24" value=session.timeMultiplier)
+              .SubFormRow
+                label(for="sessionDurationMinutes_" + index) Duration
+                input(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" title="Time in Minutes" value=session.sessionDurationMinutes)
+        button#addSession Add
+        button#removeSession Remove
