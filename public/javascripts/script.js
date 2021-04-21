@@ -105,54 +105,60 @@ elems.saveButton.addEventListener('click', ev => {
 
 elems.restartButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
-    elems.restartButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
+    elems.restartButton.classList.add('active');
     fetch('/service/restart').then(() => {
         document.body.style.cursor = 'default';
-        elems.restartButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
+        elems.restartButton.classList.remove('active');
     });
 });
 
 elems.startButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
-    elems.startButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
+    elems.startButton.classList.add('active');
     fetch('/service/start').then(() => {
         document.body.style.cursor = 'default';
-        elems.startButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
+        elems.startButton.classList.remove('active');
     });
 });
 
 elems.stopButton.addEventListener('click', ev => {
     document.body.style.cursor = 'progress';
-    elems.stopButton.style.backgroundColor = 'rgba(255, 255, 255, .125)';
+    elems.stopButton.classList.add('active');
     fetch('/service/stop').then(() => {
         document.body.style.cursor = 'default';
-        elems.stopButton.style.backgroundColor = 'rgba(0, 0, 0, .333)';
+        elems.stopButton.classList.remove('active');
     });
 });
 
 const getStatus = () => {
     elems.status.style.color = '#AAAAAA';
     fetch('/service/status')
-        .then(response => response.json())
-        .then(json => {
-            if (!json || !json.status) return;
-            elems.status.innerText = json.status;
+        .then(response => response.text())
+        .then(status => {
+            if (!status) return;
+            elems.status.innerText = status;
             elems.status.style.color = '#FFFFFF';
         }).catch(console.error);
 };
 
 const getLogs = () => {
-    elems.logs.style.color = '#AAAAAA';
+    elems.logs.style.color = '#EEEEEE';
     fetch('/service/log')
-        .then(response => response.json())
-        .then(json => {
-            if (!json || !json.logs) return;
+        .then(response => response.text())
+        .then(logs => {
+            if (!logs) return;
             const scrollToBottom = elems.logs.scrollTop == elems.logs.scrollHeight - elems.logs.offsetHeight;
-            elems.logs.innerHTML = json.logs;
+
+            logs = logs
+            .replace(/(==ERR:.*?<\/?br>)/g, '<span style="color:#ff433d">$1</span>')
+            .replace(/(systemd\[\d\]+:)(.*?<\/?br>)/g, '$1<span style="color:#ff843d">$2</span>')
+            .replace(/(RegisterToLobby succeeded|Lobby accepted connection<\/?br>)/g, '<span style="color:#64ff3d">$1</span>');
+
+            elems.logs.innerHTML = logs;
             if (scrollToBottom) {
                 elems.logs.scrollTop = elems.logs.scrollHeight;
             }
-            elems.logs.style.color = '#FFFFFF';
+            elems.logs.style.color = '#EEEEEE';
         }).catch(console.error);
 };
 
