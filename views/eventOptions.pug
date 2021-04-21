@@ -73,24 +73,30 @@
         #sessions
           each session, index in accConfig.event.sessions
             .session
+              .controls
+                .arrows
+                  button.moveUpSession(title="move session up")
+                    div.arrow.up
+                  button.moveDownSession(title="move session down")
+                    span.arrow.down
+                button.removeSession(title="remove session") &times;
               .SubFormRow
                 label(for="sessionType_" + index) Type
-                select(id="sessionType_" + index)
+                select.sessionType(id="sessionType_" + index)
                   each sessionType in basics.sessionTypes
                     option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
               .SubFormRow
                 label(for="dayOfWeekend_" + index) Day of Weekend
-                select(id="dayOfWeekend_" + index)
+                select.dayOfWeekend(id="dayOfWeekend_" + index)
                   each dayOfWeekend in basics.daysOfWeekend
                     option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
               .SubFormRow
                 label(for="hourOfDay_" + index) Start Hour
-                input(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)
+                input.hourOfDay(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)
               .SubFormRow
                 label(for="timeMultiplier_" + index) Time Multiplier
-                input(id="timeMultiplier_" + index type="number" min="0" max="24" value=session.timeMultiplier)
+                input.timeMultiplier(id="timeMultiplier_" + index type="number" min="0" max="24" value=session.timeMultiplier)
               .SubFormRow
                 label(for="sessionDurationMinutes_" + index) Duration
-                input(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" title="Time in Minutes" value=session.sessionDurationMinutes)
+                input.sessionDurationMinutes(id="sessionDurationMinutes_" + index type="number" min="1" max="9999" title="Time in Minutes" value=session.sessionDurationMinutes)
         button#addSession Add
-        button#removeSession Remove

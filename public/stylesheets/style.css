@@ -105,6 +105,10 @@ input[type="text"] {
   flex-grow: 1;
 }
 
+fieldset {
+  margin-bottom: 8px;
+}
+
 #addSession {
   margin: 10px 0 5px;
   width: 100%;
@@ -114,13 +118,43 @@ input[type="text"] {
   width: 100%;
 }
 
-.session:not(:last-of-type) {
-  padding-bottom: 5px;
-  border-bottom: 2px solid #6a6c60;
+.session .controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.session:not(:first-of-type) {
-  padding-top: 5px;
+.session .controls .arrows button {
+  margin-right: 8px;
+}
+
+.arrow {
+  border: solid #EEEEEE;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg) translate(-1px, -1px);
+}
+
+.down {
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+
+.removeSession {
+  font-weight: bold
+}
+
+.removeSession:hover {
+  background-color: #b92c2c;
+}
+
+.session {
+  border: 3px solid #282924;
+  margin-bottom: 4px;
+  padding: 4px;
 }
 
 .Form {

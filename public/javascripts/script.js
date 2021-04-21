@@ -71,18 +71,16 @@ const inputElems = {
     stabilityControlLevelMax: document.getElementById('stabilityControlLevelMax'),
 }
 
+const sessions = Array.prototype.slice.call(elems.sessions);
+
 elems.addSessionButton.addEventListener('click', ev => {
-    const sessionElem = document.createElement('div');
-    sessionElem.className = 'session';
-    sessionElem.innerHTML = elems.sessions[0].innerHTML
-        .replace(/_[\d+$]/g, `_${elems.sessions.length}`);
+    const sessionElem = elems.sessions[0].cloneNode(true);
+    prepareControlButtonEvents(sessionElem)
     elems.sessionsWrapper.append(sessionElem);
 });
 
-elems.removeSessionButton.addEventListener('click', ev => {
-    if (elems.sessions.length > 1) {
-        elems.sessionsWrapper.removeChild(elems.sessionsWrapper.lastChild)
-    }
+sessions.forEach((elem, index) => {
+    prepareControlButtonEvents(elem);
 });
 
 elems.saveButton.addEventListener('click', ev => {
@@ -130,6 +128,29 @@ elems.stopButton.addEventListener('click', ev => {
     });
 });
 
+function prepareControlButtonEvents(elem) {
+    elem.getElementsByClassName('moveUpSession')[0]
+        .addEventListener('click', ev => {
+            const elemBefore = elem.previousElementSibling;
+            elems.sessionsWrapper.insertBefore(elem, elemBefore);
+        });
+
+    elem.getElementsByClassName('moveDownSession')[0]
+        .addEventListener('click', ev => {
+            const elemAfter = elem.nextElementSibling;
+            if (elemAfter) {
+                elems.sessionsWrapper.insertBefore(elem, elemAfter.nextElementSibling);
+            } else {
+                elems.sessionsWrapper.insertBefore(elem, elems.sessionsWrapper.firstChild);
+            }
+        });
+
+    elem.getElementsByClassName('removeSession')[0]
+        .addEventListener('click', ev => {
+            elems.sessionsWrapper.removeChild(elem);
+        });
+}
+
 const getStatus = () => {
     elems.status.style.color = '#AAAAAA';
     fetch('/service/status')
@@ -150,9 +171,9 @@ const getLogs = () => {
             const scrollToBottom = elems.logs.scrollTop == elems.logs.scrollHeight - elems.logs.offsetHeight;
 
             logs = logs
-            .replace(/(==ERR:.*?<\/?br>)/g, '<span style="color:#ff433d">$1</span>')
-            .replace(/(systemd\[\d\]+:)(.*?<\/?br>)/g, '$1<span style="color:#ff843d">$2</span>')
-            .replace(/(RegisterToLobby succeeded|Lobby accepted connection<\/?br>)/g, '<span style="color:#64ff3d">$1</span>');
+                .replace(/(==ERR:.*?<\/?br>)/g, '<span style="color:#ff433d">$1</span>')
+                .replace(/(systemd\[\d\]+:)(.*?<\/?br>)/g, '$1<span style="color:#ff843d">$2</span>')
+                .replace(/(RegisterToLobby succeeded|Lobby accepted connection<\/?br>)/g, '<span style="color:#64ff3d">$1</span>');
 
             elems.logs.innerHTML = logs;
             if (scrollToBottom) {
@@ -203,12 +224,12 @@ function mapElementValues() {
             rain: parseFloat(inputElems.rain.value),
             weatherRandomness: parseInt(inputElems.weatherRandomness.value),
 
-            sessions: Array.from(elems.sessions).map((elem, index) => ({
-                sessionType: document.getElementById('sessionType_' + index).value,
-                dayOfWeekend: parseInt(document.getElementById('dayOfWeekend_' + index).value),
-                hourOfDay: parseInt(document.getElementById('hourOfDay_' + index).value),
-                timeMultiplier: parseInt(document.getElementById('timeMultiplier_' + index).value),
-                sessionDurationMinutes: parseInt(document.getElementById('sessionDurationMinutes_' + index).value)
+            sessions: Array.from(elems.sessions).map((elem) => ({
+                sessionType: elem.getElementsByClassName('sessionType')[0].value,
+                dayOfWeekend: parseInt(elem.getElementsByClassName('dayOfWeekend')[0].value),
+                hourOfDay: parseInt(elem.getElementsByClassName('hourOfDay')[0].value),
+                timeMultiplier: parseInt(elem.getElementsByClassName('timeMultiplier')[0].value),
+                sessionDurationMinutes: parseInt(elem.getElementsByClassName('sessionDurationMinutes')[0].value)
             })),
         },
         eventRules: {
