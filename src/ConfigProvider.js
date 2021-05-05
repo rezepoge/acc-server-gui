@@ -43,6 +43,7 @@ const load = () => {
             assistRules: JSON.parse(assistRulesData),
         };
     } catch (ex) {
+        console.info(cfgPath);
         console.error(ex.stack);
     }
 }
