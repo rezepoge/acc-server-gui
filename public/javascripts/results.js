@@ -36,7 +36,7 @@ function getTime(total) {
 
     const minutesStr = minutes >= 10 ? '' + minutes : '0' + minutes;
     const secondsStr = seconds >= 10 ? '' + seconds : '0' + seconds;
-    const millisStr = millis >= 10 ? '' + millis : '0' + millis;
+    const millisStr = millis >= 100 ? '' + millis : millis >= 10 ? '0' + millis : '00' + millis;
 
     return minutesStr + ':' + secondsStr + '.' + millisStr;
 }
