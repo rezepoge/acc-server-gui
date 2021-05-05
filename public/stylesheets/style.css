@@ -28,7 +28,19 @@ h2 {
 }
 
 a {
-  color: #bad139
+  color: #bad139;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+#results {
+  font-size: 1.2em;
+  margin: 1em auto;
 }
 
 main {
@@ -185,6 +197,84 @@ fieldset {
 .FormRow:hover,
 .SubFormRow:hover {
   background-color: #353630
+}
+
+#timetable {
+  width: 800px;
+  max-width: 95%;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.driver {
+  display: flex;
+  gap: .5em;
+  width: 80px;
+}
+
+.car {
+  display: flex;
+  gap: .5em;
+  width: 300px;
+}
+
+.timeTable_line {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1b18;
+  padding: .5em .25em .5em 1em;
+  width: calc(100% - 1em);
+  line-height: 2em;
+  border-radius: 5px;
+}
+
+.timing {
+  display: flex;
+  gap: 1em;
+  width: 20em;
+}
+
+.timing > div {
+  flex-basis: 100%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0 1em;
+}
+
+.bestLap {
+  background-color: green;
+}
+
+.timeTable_line:first-child .bestLap {
+  background-color: purple;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  gap: .5em;
+  margin-bottom: 2em;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 1em;
+  border-radius: 5px;
+  gap: 1em;
+  width: 42ch;
+  max-width: 100%;
+  background-color: #1a1b18;
+  cursor: pointer;
+}
+
+.result:hover,
+.result:focus {
+  background-color: #363832;
 }
 
 #Buttons {

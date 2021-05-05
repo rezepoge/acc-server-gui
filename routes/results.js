@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const settingsProvider = require('../src/Settings');
-const accConfig = require('../src/ConfigProvider');
+const resultsProvider = require('../src/ResultsProvider');
 const version = require('../package.json').version;
 
-router.get('/', function (req, res, next) {
-  res.render('index', {
+
+router.get('/', async function (req, res, next) {
+  const results = await resultsProvider.readResults();
+  res.render('results', {
     title: 'Assetto Corsa Competizione Server GUI',
-    settings: settingsProvider.getSettings(),
     basics: settingsProvider.getBasics(),
-    accConfig: accConfig.get(),
+    results,
     version
   });
 });

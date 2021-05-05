@@ -2,7 +2,6 @@
 
 const elems = {
     addSessionButton: document.getElementById('addSession'),
-    removeSessionButton: document.getElementById('removeSession'),
     sessionsWrapper: document.getElementById('sessions'),
     sessions: document.getElementsByClassName('session'),
     saveButton: document.getElementById('save'),
@@ -79,7 +78,7 @@ elems.addSessionButton.addEventListener('click', ev => {
     elems.sessionsWrapper.append(sessionElem);
 });
 
-sessions.forEach((elem, index) => {
+sessions.forEach((elem) => {
     prepareControlButtonEvents(elem);
 });
 

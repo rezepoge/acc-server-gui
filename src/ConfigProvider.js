@@ -1,13 +1,14 @@
 'use strict';
 const fs = require('fs');
 const settings = require('./Settings').getSettings();
+const cfgPath = settings.accServerPath + 'cfg/';
 
 const files = {
-    settings: settings.cfgPath + 'settings.json',
-    configuration: settings.cfgPath + 'configuration.json',
-    event: settings.cfgPath + 'event.json',
-    eventRules: settings.cfgPath + 'eventRules.json',
-    assistRules: settings.cfgPath + 'assistRules.json'
+    settings: cfgPath + 'settings.json',
+    configuration: cfgPath + 'configuration.json',
+    event: cfgPath + 'event.json',
+    eventRules: cfgPath + 'eventRules.json',
+    assistRules: cfgPath + 'assistRules.json'
 }
 
 let config = {};

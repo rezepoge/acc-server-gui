@@ -47,170 +47,361 @@
             "displayname": "free"
         }
     ],
-    "tracks": [
-        {
+    "tracks": [{
             "name": "monza",
-            "displayname": "Monza 2018"
+            "displayname": "Monza 2018",
+            "boxes": 29
         },
         {
             "name": "zolder",
-            "displayname": "Zolder 2018"
+            "displayname": "Zolder 2018",
+            "boxes": 34
         },
         {
             "name": "brands_hatch",
-            "displayname": "Brands Hatch 2018"
+            "displayname": "Brands Hatch 2018",
+            "boxes": 32
         },
         {
             "name": "silverstone",
-            "displayname": "Silverstone 2018"
+            "displayname": "Silverstone 2018",
+            "boxes": 36
         },
         {
             "name": "paul_ricard",
-            "displayname": "Paul Ricard 2018"
+            "displayname": "Paul Ricard 2018",
+            "boxes": 33
         },
         {
             "name": "misano",
-            "displayname": "Misano 2018"
+            "displayname": "Misano 2018",
+            "boxes": 30
         },
         {
             "name": "spa",
-            "displayname": "Spa 2018"
+            "displayname": "Spa 2018",
+            "boxes": 82
         },
         {
             "name": "nurburgring",
-            "displayname": "Nurburgring 2018"
+            "displayname": "Nurburgring 2018",
+            "boxes": 30
         },
         {
             "name": "barcelona",
-            "displayname": "Barcelona 2018"
+            "displayname": "Barcelona 2018",
+            "boxes": 29
         },
         {
             "name": "hungaroring",
-            "displayname": "Hungaroring 2018"
+            "displayname": "Hungaroring 2018",
+            "boxes": 27
         },
         {
             "name": "zandvoort",
-            "displayname": "Zandvoort 2018"
+            "displayname": "Zandvoort 2018",
+            "boxes": 25
         },
         {
             "name": "monza_2019",
-            "displayname": "Monza 2019"
+            "displayname": "Monza 2019",
+            "boxes": 29
         },
         {
             "name": "zolder_2019",
-            "displayname": "Zolder 2019"
+            "displayname": "Zolder 2019",
+            "boxes": 34
         },
         {
             "name": "brands_hatch_2019",
-            "displayname": "Brands Hatch 2019"
+            "displayname": "Brands Hatch 2019",
+            "boxes": 32
         },
         {
             "name": "silverstone_2019",
-            "displayname": "Silverstone 2019"
+            "displayname": "Silverstone 2019",
+            "boxes": 36
         },
         {
             "name": "paul_ricard_2019",
-            "displayname": "Paul Ricard 2019"
+            "displayname": "Paul Ricard 2019",
+            "boxes": 33
         },
         {
             "name": "misano_2019",
-            "displayname": "Misano 2019"
+            "displayname": "Misano 2019",
+            "boxes": 30
         },
         {
             "name": "spa_2019",
-            "displayname": "Spa 2019"
+            "displayname": "Spa 2019",
+            "boxes": 82
         },
         {
             "name": "nurburgring_2019",
-            "displayname": "Nurburgring 2019"
+            "displayname": "Nurburgring 2019",
+            "boxes": 30
         },
         {
             "name": "barcelona_2019",
-            "displayname": "Barcelona 2019"
+            "displayname": "Barcelona 2019",
+            "boxes": 29
         },
         {
             "name": "hungaroring_2019",
-            "displayname": "Hungaroring 2019"
+            "displayname": "Hungaroring 2019",
+            "boxes": 27
         },
         {
             "name": "zandvoort_2019",
-            "displayname": "Zandvoort 2019"
+            "displayname": "Zandvoort 2019",
+            "boxes": 25
         },
         {
             "name": "kyalami_2019",
-            "displayname": "Kyalami 2019"
+            "displayname": "Kyalami 2019",
+            "boxes": 40
         },
         {
             "name": "mount_panorama_2019",
-            "displayname": "Mount Panorama 2019"
+            "displayname": "Mount Panorama 2019",
+            "boxes": 36
         },
         {
             "name": "suzuka_2019",
-            "displayname": "Suzuka 2019"
+            "displayname": "Suzuka 2019",
+            "boxes": 51
         },
         {
             "name": "laguna_seca_2019",
-            "displayname": "Laguna Seca 2019"
+            "displayname": "Laguna Seca 2019",
+            "boxes": 30
         },
         {
             "name": "monza_2020",
-            "displayname": "Monza 2020"
+            "displayname": "Monza 2020",
+            "boxes": 29
         },
         {
             "name": "zolder_2020",
-            "displayname": "Zolder 2020"
+            "displayname": "Zolder 2020",
+            "boxes": 34
         },
         {
             "name": "brands_hatch_2020",
-            "displayname": "Brands Hatch 2020"
+            "displayname": "Brands Hatch 2020",
+            "boxes": 32
         },
         {
             "name": "silverstone_2020",
-            "displayname": "Silverstone 2020"
+            "displayname": "Silverstone 2020",
+            "boxes": 36
         },
         {
             "name": "paul_ricard_2020",
-            "displayname": "Paul Ricard 2020"
+            "displayname": "Paul Ricard 2020",
+            "boxes": 33
         },
         {
             "name": "misano_2020",
-            "displayname": "Misano 2020"
+            "displayname": "Misano 2020",
+            "boxes": 30
         },
         {
             "name": "spa_2020",
-            "displayname": "Spa 2020"
+            "displayname": "Spa 2020",
+            "boxes": 82
         },
         {
             "name": "nurburgring_2020",
-            "displayname": "Nurburgring 2020"
+            "displayname": "Nurburgring 2020",
+            "boxes": 30
         },
         {
             "name": "barcelona_2020",
-            "displayname": "Barcelona 2020"
+            "displayname": "Barcelona 2020",
+            "boxes": 29
         },
         {
             "name": "hungaroring_2020",
-            "displayname": "Hungaroring 2020"
+            "displayname": "Hungaroring 2020",
+            "boxes": 27
         },
         {
             "name": "zandvoort_2020",
-            "displayname": "Zandvord 2020"
+            "displayname": "Zandvord 2020",
+            "boxes": 25
         },
         {
             "name": "imola_2020",
-            "displayname": "Imola 2020"
+            "displayname": "Imola 2020",
+            "boxes": 30
         },
         {
             "name": "oulton_park_2019",
-            "displayname": "Oulton Park 2019"
+            "displayname": "Oulton Park 2019",
+            "boxes": 28
         },
         {
             "name": "donington_2019",
-            "displayname": "Donington Park 2019"
+            "displayname": "Donington Park 2019",
+            "boxes": 37
         },
         {
             "name": "snetterton_2019",
-            "displayname": "Snetterton 2019"
+            "displayname": "Snetterton 2019",
+            "boxes": 26
         }
-    ]
+    ],
+    "cars": [{
+        "id": 0,
+        "name": "Porsche 991 GT3 R",
+        "year": 2018
+    }, {
+        "id": 1,
+        "name": "Mercedes-AMG GT3",
+        "year": 2015
+    }, {
+        "id": 2,
+        "name": "Ferrari 488 GT3",
+        "year": 2018
+    }, {
+        "id": 3,
+        "name": "Audi R8 LMS",
+        "year": 2015
+    }, {
+        "id": 4,
+        "name": "Lamborghini Huracan GT3",
+        "year": 2015
+    }, {
+        "id": 5,
+        "name": "McLaren 650S GT3",
+        "year": 2015
+    }, {
+        "id": 6,
+        "name": "Nissan GT-R Nismo GT3",
+        "year": 2018
+    }, {
+        "id": 7,
+        "name": "BMW M6 GT3",
+        "year": 2017
+    }, {
+        "id": 8,
+        "name": "Bentley Continental GT3",
+        "year": 2018
+    }, {
+        "id": 9,
+        "name": "Porsche 991 II GT3 Cup",
+        "year": 2017
+    }, {
+        "id": 10,
+        "name": "Nissan GT-R Nismo GT3",
+        "year": 2015
+    }, {
+        "id": 11,
+        "name": "Bentley Continental GT3",
+        "year": 2015
+    }, {
+        "id": 12,
+        "name": "AMR V12 Vantage GT3",
+        "year": 2013
+    }, {
+        "id": 13,
+        "name": "Reiter Engineering R-EX GT3",
+        "year": 2017
+    }, {
+        "id": 14,
+        "name": "Emil Frey Jaguar G3",
+        "year": 2012
+    }, {
+        "id": 15,
+        "name": "Lexus RC F GT3",
+        "year": 2016
+    }, {
+        "id": 16,
+        "name": "Lamborghini Huracan GT3 Evo",
+        "year": 2019
+    }, {
+        "id": 17,
+        "name": "Honda NSX GT3",
+        "year": 2017
+    }, {
+        "id": 18,
+        "name": "Lamborghini Huraca SuperTrofeo",
+        "year": 2015
+    }, {
+        "id": 19,
+        "name": "Audi R8 LMS Evo",
+        "year": 2019
+    }, {
+        "id": 20,
+        "name": "AMR V8 Vantage",
+        "year": 2019
+    }, {
+        "id": 21,
+        "name": "Honda NSX GT3 Evo",
+        "year": 2019
+    }, {
+        "id": 22,
+        "name": "McLaren 720S GT3",
+        "year": 2019
+    }, {
+        "id": 23,
+        "name": "Porsche 911 II GT3 R",
+        "year": 2019
+    }, {
+        "id": 24,
+        "name": "Ferrari 488 GT3 Evo",
+        "year": 2020
+    }, {
+        "id": 25,
+        "name": "Mercedes-AMG GT3",
+        "year": 2020
+    }, {
+        "id": 50,
+        "name": "Alpine A110 GT4",
+        "year": 2018
+    }, {
+        "id": 51,
+        "name": "Aston Martin Vantage GT4",
+        "year": 2018
+    }, {
+        "id": 52,
+        "name": "Audi R8 LMS GT4",
+        "year": 2018
+    }, {
+        "id": 53,
+        "name": "BMW M4 GT4",
+        "year": 2018
+    }, {
+
+    }, {
+        "id": 55,
+        "name": "Chevrolet Camaro GT4",
+        "year": 2017
+    }, {
+        "id": 56,
+        "name": "Ginetta G55 GT4",
+        "year": 2012
+    }, {
+        "id": 57,
+        "name": "KTM X-Bow GT4",
+        "year": 2016
+    }, {
+        "id": 58,
+        "name": "Maserati MC GT4",
+        "year": 2016
+    }, {
+        "id": 59,
+        "name": "McLaren 570S GT4",
+        "year": 2016
+    }, {
+        "id": 60,
+        "name": "Mercedes AMG GT4",
+        "year": 2016
+    }, {
+        "id": 61,
+        "name": "Porsche 718 Cayman GT4 Clubsport",
+        "year": 2019
+    }]
 }
