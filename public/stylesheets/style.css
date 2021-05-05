@@ -233,12 +233,11 @@ fieldset {
 
 .timing {
   display: flex;
-  flex-wrap: wrap;
   gap: 1em;
   width: 20em;
 }
 
-.timing > div {
+.timing>div {
   flex-basis: 100%;
   text-align: center;
   border-radius: 5px;
@@ -322,6 +321,11 @@ fieldset {
 
   .SubFormColumn+.SubFormColumn {
     margin-left: 0
+  }
+
+  .timing {
+    gap: .1em;
+    flex-wrap: wrap;
   }
 
   input,
