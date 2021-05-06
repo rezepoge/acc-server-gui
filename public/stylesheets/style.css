@@ -232,7 +232,7 @@ fieldset {
 .car {
   display: flex;
   gap: .5em;
-  width: 300px;
+  width: 400px;
 }
 
 .timeTable_line {
