@@ -4,25 +4,45 @@ const fsp = require('fs').promises;
 const async = require('async');
 const settings = require('./Settings').getSettings();
 const resultsPath = settings.accServerPath + 'results/';
+let resultsArr = [];
+let cachedResultFilesArr = [];
 
 async function readResults() {
-    const results = [];
-    const resultFiles = await fsp.readdir(resultsPath);
+    let resultFilesArr = await fsp.readdir(resultsPath);
 
-    await async.forEach(resultFiles, async resultFile => {
+    const resultFilesArrLength = resultFilesArr.length;
+    const cachedResultFilesArrLength = cachedResultFilesArr.length;
+
+    if (cachedResultFilesArrLength === resultFilesArrLength) {
+        return resultsArr;
+    }
+
+    if (cachedResultFilesArrLength) {
+        resultFilesArr = resultFilesArr
+            .filter((elem, index) => elem !== cachedResultFilesArr[index]);
+    }
+
+    cachedResultFilesArr = cachedResultFilesArr.concat(resultFilesArr);
+
+    await async.forEach(resultFilesArr, async resultFile => {
         const resultDataJson = await fsp.readFile(resultsPath + resultFile, {
             encoding: 'utf16le'
         });
         const resultDataObj = JSON.parse(resultDataJson.toString().trim());
         resultDataObj['datetime'] = fileNameToDateTime(resultFile);
-        results.push(resultDataObj);
+        resultsArr.push(resultDataObj);
     });
 
 
-    const resultsFiltered = results.filter(elem => elem.sessionResult.leaderBoardLines.length > 0);
-    resultsFiltered.sort((a, b) => b.datetime.getTime() - a.datetime.getTime());
+    resultsArr = resultsArr
+        .filter(elem => elem.sessionResult.leaderBoardLines.length > 0 && elem.laps.length > 0)
+        .sort((a, b) => b.datetime.getTime() - a.datetime.getTime());
 
-    return resultsFiltered;
+    return resultsArr;
+}
+
+module.exports = {
+    readResults
 }
 
 function fileNameToDateTime(filename) {
@@ -32,9 +52,7 @@ function fileNameToDateTime(filename) {
 
     const [dateStr, timeStr] = filename.split('_');
 
-    const datetimeStr = '20' + splitNChars(dateStr, 2).join('-') + 'T' + splitNChars(timeStr, 2).join(':');
-
-    return new Date(datetimeStr);
+    return new Date('20' + splitNChars(dateStr, 2).join('-') + 'T' + splitNChars(timeStr, 2).join(':'));
 }
 
 function splitNChars(txt, num) {
@@ -45,8 +63,4 @@ function splitNChars(txt, num) {
     }
 
     return result;
-}
-
-module.exports = {
-    readResults
 }

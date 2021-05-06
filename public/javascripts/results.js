@@ -5,6 +5,12 @@ const timetable = document.getElementById('timetable');
 
 resultElems.forEach((elem, index) => {
     elem.addEventListener('click', ev => {
+        elem.classList.add('active');
+        resultElems.forEach(elem2 => {
+            if(elem !== elem2) {
+                elem2.classList.remove('active');
+            }
+        });
         let timetableHtml = '';
         results[index].sessionResult.leaderBoardLines.forEach((line, position) => {
             timetableHtml += `<div class="timeTable_line">
