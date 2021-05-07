@@ -24,7 +24,7 @@
           each carGroup in basics.carGroups
             option(value=carGroup, selected=(carGroup == accConfig.settings.carGroup))=carGroup
       .SubFormRow
-        label(for="maxCarSlots") Max Car Slots
+        label(for="maxCarSlots")='Max Car Slots (' + basics.tracks.find(track => track.name === accConfig.event.track).boxes + ')'
         input#maxCarSlots(type="number" min="1" max="100" value=accConfig.settings.maxCarSlots)
       .SubFormRow
         label(for="trackMedalsRequirement") TR Requirement

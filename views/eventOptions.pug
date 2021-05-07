@@ -6,7 +6,7 @@
         label(for="track") Track
         select#track
           each track in basics.tracks
-            option(value=track.name, selected=(track.name == accConfig.event.track))=track.displayname
+            option(value=track.name, selected=(track.name === accConfig.event.track))=track.displayname
       fieldset
         legend  Miscellaneous
         .SubFormRow
