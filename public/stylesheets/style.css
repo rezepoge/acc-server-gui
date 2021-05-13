@@ -196,19 +196,22 @@ fieldset {
 
 #grid {
   display: grid;
-  width: calc(100% - 2em);
-  grid-template-columns: 30% 70%;
+  width: 98%;
+  grid-template-columns: 2fr 5fr;
   grid-auto-rows: auto auto;
-  font-size: 1.125rem;
+  gap: 1em
 }
 
 #results {
-  width: calc(100% - 2em);
+  width: 100%;
   height: 90vh;
   overflow-y: auto;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5em
 }
 
 #timetable {
@@ -235,7 +238,7 @@ fieldset {
   width: 400px;
 }
 
-.timeTable_line {
+.timeTableLine {
   display: flex;
   justify-content: space-between;
   background-color: #1a1b18;
@@ -244,6 +247,11 @@ fieldset {
   width: calc(100% - 1.5em);
   line-height: 1.5em;
   border-radius: 5px;
+}
+
+.timeTableLine.noValidLap {
+  color: #aaa;
+  background-color: #111;
 }
 
 .timing {
@@ -263,7 +271,7 @@ fieldset {
   background-color: green;
 }
 
-.timeTable_line:first-child .bestLap {
+.timeTableLine:first-child .bestLap {
   background-color: purple;
 }
 
@@ -271,7 +279,6 @@ fieldset {
   display: flex;
   justify-content: space-between;
   padding: .5em 1em;
-  margin: .33em .5em .33em 0;
   border-radius: 5px;
   gap: 1em;
   max-width: 100%;
@@ -303,11 +310,9 @@ fieldset {
 #logs {
   font-family: Consolas, monospace;
   text-align: left;
-  min-width: 500px;
-  width: 1024px;
-  max-width: calc(100% - 16px);
-  height: 576px;
-  resize: horizontal;
+  width: clamp(300px, 1280px, 100% - 16px);
+  height: clamp(500px, 576px, 90vh);
+  word-break: break-word;
   overflow-y: scroll;
   margin: 24px auto;
   padding: 8px;

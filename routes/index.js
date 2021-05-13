@@ -6,7 +6,7 @@ const version = require('../package.json').version;
 
 router.get('/', function (req, res, next) {
   res.render('index', {
-    title: 'Assetto Corsa Competizione Server GUI',
+    title: 'ACC Server GUI',
     settings: settingsProvider.getSettings(),
     basics: settingsProvider.getBasics(),
     accConfig: accConfig.get(),
