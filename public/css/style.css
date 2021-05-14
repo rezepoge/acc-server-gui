@@ -10,33 +10,43 @@
   --font-dark-clr: hsl(0, 0%, 70%);
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/open-sans-normal-400.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/oswald-normal-400.woff2') format('woff2')
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  font-family: "Myriad Pro", Arial, sans-serif;
+  font-size: 1rem;
+  font-family: 'Open Sans', Arial, sans-serif;
   background-color: var(--bg-clr);
   color: var(--font-clr);
 }
 
 h1,
 h2,
-h3 {
-  margin: 0 0 .5em 0
-}
-
+h3,
 h4 {
-  margin: .8em 0 .2em 0
-}
-
-h4#sess {
-  margin-top: 0
-}
-
-h1,
-h2 {
-  margin-top: .5em;
-  text-align: center
+  font-family: 'Oswald', Verdana, sans-serif;
+  margin: 0;
 }
 
 a {
@@ -55,7 +65,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: flex-start
+  align-items: flex-start;
+  gap: 1em;
+  margin-block: 1em;
 }
 
 footer {
@@ -88,7 +100,8 @@ button:active {
 }
 
 label {
-  line-height: 26px
+  line-height: 1.6rem;
+  font-size: .85rem;
 }
 
 input[type=number] {
@@ -156,7 +169,6 @@ fieldset {
 
 .Form {
   padding: 1em;
-  margin: 1em;
   background-color: var(--bg-dark-clr);
   border-radius: 5px
 }
@@ -183,7 +195,7 @@ fieldset {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .FormRow label {
@@ -195,7 +207,7 @@ fieldset {
   margin: .25em 0 .25em 0;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .SubFormRow label {
@@ -309,12 +321,15 @@ fieldset {
 }
 
 #Buttons {
+  margin-block: 1em;
+  margin-inline: auto;
   text-align: center
 }
 
 #Buttons button {
-  width: 100px;
-  margin: 10px
+  width: 15ch;
+  margin: 10px;
+  padding-block: .5em;
 }
 
 #logs,
@@ -325,7 +340,7 @@ fieldset {
 #logs {
   font-family: Consolas, monospace;
   text-align: left;
-  width: clamp(300px, 1280px, 100% - 16px);
+  width: min(100%, 96ch);
   height: clamp(500px, 576px, 90vh);
   word-break: break-word;
   overflow-y: scroll;
@@ -336,11 +351,30 @@ fieldset {
 
 @media (max-width:640px) {
   .Form {
-    width: calc(100vw - 3em)
+    width: 98vw
   }
 
-  .SubForm {
+  .SubForm,
+  .FormRow,
+  .SubFormRow {
     flex-wrap: wrap
+  }
+
+  .Form label {
+    flex-basis: 80%;
+  }
+
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    flex-basis: 100%;
+    font-size: .9rem;
+    padding-block: .5em;
+  }
+
+  input[type="checkbox"] {
+    min-width: 0;
   }
 
   .SubFormColumn {
@@ -372,9 +406,5 @@ fieldset {
   input,
   select {
     min-width: 100px
-  }
-
-  #Buttons button {
-    width: 100px
   }
 }
