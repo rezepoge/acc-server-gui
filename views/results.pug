@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  h1= title
-
   main
     script.
       const results=!{JSON.stringify(results)}, basics=!{JSON.stringify(basics)};
@@ -11,8 +9,8 @@ block content
         each result in results
           .result
             .date=result.datetime.toLocaleString('de-de', {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'})
-            .trackName=basics.tracks.find(track => track.name === result.trackName).displayname
+            .trackName=basics.tracks.find(track => track.name === result.trackName).displayName
             .sessionType=result.sessionType
       #timetable
-    script(src='/javascripts/results.min.js?ver=' + version defer='defer')
+    script(src='/js/results.min.js?ver=' + version defer='defer')
 

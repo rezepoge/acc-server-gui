@@ -151,18 +151,18 @@ function prepareControlButtonEvents(elem) {
 }
 
 const getStatus = () => {
-    elems.status.style.color = '#AAAAAA';
+    elems.status.style.color = 'var(--font-dark-clr)';
     fetch('/service/status')
         .then(response => response.text())
         .then(status => {
             if (!status) return;
             elems.status.innerText = status;
-            elems.status.style.color = '#FFFFFF';
+            elems.status.style.color = 'var(--font-clr)';
         }).catch(console.error);
 };
 
 const getLogs = () => {
-    elems.logs.style.color = '#EEEEEE';
+    elems.logs.style.color = 'var(--font-dark-clr)';
     fetch('/service/log')
         .then(response => response.text())
         .then(logs => {
@@ -178,7 +178,7 @@ const getLogs = () => {
             if (scrollToBottom) {
                 elems.logs.scrollTop = elems.logs.scrollHeight;
             }
-            elems.logs.style.color = '#EEEEEE';
+            elems.logs.style.color = 'var(--font-clr)';
         }).catch(console.error);
 };
 

@@ -6,7 +6,7 @@
         label(for="track") Track
         select#track
           each track in basics.tracks
-            option(value=track.name, selected=(track.name === accConfig.event.track))=track.displayname
+            option(value=track.name, selected=(track.name === accConfig.event.track))=track.displayName
       fieldset
         legend  Miscellaneous
         .SubFormRow
@@ -84,12 +84,12 @@
                 label(for="sessionType_" + index) Type
                 select.sessionType(id="sessionType_" + index)
                   each sessionType in basics.sessionTypes
-                    option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayname
+                    option(value=sessionType.name, selected=(sessionType.name == session.sessionType))=sessionType.displayName
               .SubFormRow
                 label(for="dayOfWeekend_" + index) Day of Weekend
                 select.dayOfWeekend(id="dayOfWeekend_" + index)
                   each dayOfWeekend in basics.daysOfWeekend
-                    option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayname
+                    option(value=dayOfWeekend.id, selected=(dayOfWeekend.id == session.dayOfWeekend))=dayOfWeekend.displayName
               .SubFormRow
                 label(for="hourOfDay_" + index) Start Hour
                 input.hourOfDay(id="hourOfDay_" + index type="number" min="1" max="23" value=session.hourOfDay)

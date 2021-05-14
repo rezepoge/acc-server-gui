@@ -70,4 +70,4 @@
         label(for="formationLapType") Formation Lap
         select#formationLapType
           each formationLapType in basics.formationLapTypes
-            option(value=formationLapType.id, selected=(formationLapType.id == accConfig.settings.formationLapType))=formationLapType.displayname
+            option(value=formationLapType.id, selected=(formationLapType.id == accConfig.settings.formationLapType))=formationLapType.displayName

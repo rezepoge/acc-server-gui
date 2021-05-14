@@ -1,12 +1,10 @@
 extends layout
 
 block content
-  h1= title
-
   main
     include serverSettings
     include eventOptions
     include assistRules
 
   include buttons
-  script(src='/javascripts/main.min.js?ver=' + version defer='defer')
+  script(src='/js/main.min.js?ver=' + version defer='defer')

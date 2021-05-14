@@ -8,7 +8,7 @@ const version = require('../package.json').version;
 router.get('/', async function (req, res, next) {
   const results = await resultsProvider.readResults();
   res.render('results', {
-    title: 'Assetto Corsa Competizione Server GUI',
+    title: 'Results',
     basics: settingsProvider.getBasics(),
     results,
     version
