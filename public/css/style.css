@@ -231,13 +231,12 @@ fieldset {
   width: 98%;
   grid-template-columns: 2fr 5fr;
   grid-auto-rows: auto auto;
-  margin-top: 1vh;
   gap: 1em
 }
 
 #results {
   width: 100%;
-  height: 98vh;
+  height: 97vh;
   overflow-y: auto;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
@@ -249,7 +248,7 @@ fieldset {
 
 #timetable {
   width: 100%;
-  height: 98vh;
+  height: 97vh;
   overflow-y: auto;
   margin: 0 auto;
   display: flex;
@@ -271,39 +270,93 @@ fieldset {
   width: 400px;
 }
 
-.timeTableLine {
+.position,
+.lap {
+  min-width: 3ch;
+}
+
+.timeTableLine,
+.timeTableLine_header {
   display: flex;
   justify-content: space-between;
   background-color: var(--bg-dark-clr);
   padding: .5em .25em .5em 1em;
   gap: 1em;
-  width: calc(100% - 1.5em);
   line-height: 1.5em;
   border-radius: 5px;
 }
 
-.timeTableLine.noValidLap {
+.timeTableLine:not(.noValidLap) {
+  cursor: pointer;
+}
+
+.laps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lapTableLine,
+.lapTableLine_header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-dark-clr);
+  padding: .25em .25em .25em .5em;
+  margin-bottom: .25em;
+  gap: 1em;
+  width: min(500px, 100%);
+  line-height: 1.5em;
+  border-radius: 5px;
+}
+
+.timeTableLine_header,
+.lapTableLine_header {
+  background-color: transparent;
+}
+
+.noValidLap {
   color: var(--bg-light-clr);
   background-color: var(--bg-darkest-clr);
 }
 
 .timing {
   display: flex;
-  gap: 1em;
-  width: 20em;
+  width: 22em;
+  gap: .5em;
 }
 
-.timing>div {
+.splits {
+  display: flex;
+  gap: .5em;
+  width: 18em;
+  margin-left: 1%;
+}
+
+
+.timing>div,
+.splits>div {
   flex-basis: 100%;
   text-align: center;
   border-radius: 5px;
 }
 
-.bestLap {
+.laptime {
+  border-radius: 5px;
+  padding-inline: .5em;
+}
+
+.timeTableLine:not(.noValidLap) .avgLap,
+.laps .avgLap {
+  background-color: darkblue;
+}
+
+.timeTableLine:not(.noValidLap) .bestLap,
+.laps .bestLap {
   background-color: green;
 }
 
-.timeTableLine:first-child .bestLap {
+.timeTableLine:not(.noValidLap) .bestLapAll,
+.laps .bestLapAll {
   background-color: purple;
 }
 
@@ -354,7 +407,7 @@ fieldset {
   background-color: var(--bg-darkest-clr)
 }
 
-@media (max-width:640px) {
+@media (max-width:800px) {
   .Form {
     width: 98vw
   }
@@ -394,7 +447,6 @@ fieldset {
     height: auto;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-
   }
 
   #timetable {
