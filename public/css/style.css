@@ -96,7 +96,8 @@ input[type=number] {
   padding-left: 16px
 }
 
-input[type=text] {
+input[type=text],
+input[type=password] {
   flex-grow: 1
 }
 
@@ -111,6 +112,11 @@ fieldset {
 
 #removeSession {
   width: 100%
+}
+
+.showPassword {
+  cursor: pointer;
+  margin-inline: 2px;
 }
 
 .session .controls {

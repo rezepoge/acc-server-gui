@@ -10,6 +10,7 @@ const elems = {
     stopButton: document.getElementById('stop'),
     status: document.getElementById('status'),
     logs: document.getElementById('logs'),
+    showPasswordButtons: document.getElementsByClassName('showPassword'),
 };
 
 const inputElems = {
@@ -70,7 +71,7 @@ const inputElems = {
     stabilityControlLevelMax: document.getElementById('stabilityControlLevelMax'),
 }
 
-const sessions = Array.prototype.slice.call(elems.sessions);
+const sessions = Array.from(elems.sessions);
 
 elems.addSessionButton.addEventListener('click', ev => {
     const sessionElem = elems.sessions[0].cloneNode(true);
@@ -80,6 +81,15 @@ elems.addSessionButton.addEventListener('click', ev => {
 
 sessions.forEach((elem) => {
     prepareControlButtonEvents(elem);
+});
+
+const showPasswordButtonsArr = Array.from(elems.showPasswordButtons);
+
+showPasswordButtonsArr.forEach(elem => {
+    elem.addEventListener('click', ev => {
+        const currType = inputElems[elem.getAttribute('data-id')].type;
+        inputElems[elem.getAttribute('data-id')].type = currType === 'password' ? 'text' : 'password';
+    });
 });
 
 elems.saveButton.addEventListener('click', ev => {

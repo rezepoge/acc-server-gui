@@ -5,13 +5,16 @@
     input#serverName(type="text" maxLength="64" value=accConfig.settings.serverName)
   .FormRow
     label(for="password") Join Password
-    input#password(type="text" maxLength="32" value=accConfig.settings.password)
+    input#password(type="password" maxLength="32" value=accConfig.settings.password)
+    .showPassword(data-id="password") 👀
   .FormRow
     label(for="adminPassword") Admin Password
-    input#adminPassword(type="text" maxLength="32" value=accConfig.settings.adminPassword)
+    input#adminPassword(type="password" maxLength="32" value=accConfig.settings.adminPassword)
+    .showPassword(data-id="adminPassword") 👀
   .FormRow
     label(for="spectatorPassword") Spectator Password
-    input#spectatorPassword(type="text" maxLength="32" value=accConfig.settings.spectatorPassword)
+    input#spectatorPassword(type="password" maxLength="32" value=accConfig.settings.spectatorPassword)
+    .showPassword(data-id="spectatorPassword") 👀
   .FormRow
     label(for="centralEntryListPath") Central Entry List Path
     input#centralEntryListPath(type="text" maxLength="999" value=accConfig.settings.centralEntryListPath)
