@@ -30,8 +30,11 @@ function renderTimetable(ev, elem, index) {
     </div>`;
 
     results[index].sessionResult.leaderBoardLines.forEach((line, position) => {
-        const lapsTimesByDriver = results[index].laps.filter(elem => elem.carId === line.car.carId).map(lap => lap.laptime);
-        const avgLap = lapsTimesByDriver.length ? (lapsTimesByDriver.reduce((sum, val) => sum + val, 0) / lapsTimesByDriver.length) : null;
+        const lapTimesByDriver = results[index].laps
+            .filter(lap => lap.carId === line.car.carId)
+            .filter(lap => lap.isValidForBest)
+            .map(lap => lap.laptime);
+        const avgLap = lapTimesByDriver.length ? (lapTimesByDriver.reduce((sum, val) => sum + val, 0) / lapTimesByDriver.length) : null;
 
         timetableHtml += `<div class="timeTableLine${line.timing.totalTime <= line.timing.bestLap ? ' noValidLap' : ''}" data-carId="${line.car.carId}" data-position="${position}">
                 <div class="driver">
