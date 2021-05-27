@@ -1,7 +1,6 @@
 'use strict';
 
 (() => {
-
     const elems = {
         addSessionButton: document.getElementById('addSession'),
         sessionsWrapper: document.getElementById('sessions'),

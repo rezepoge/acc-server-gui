@@ -7,4 +7,5 @@ deploy_job:
     - rsync -rvu --delete --exclude-from=$DIR/.gitignore $DIR $INSTALL_DIR && \
     - cd $INSTALL_DIR && \
     - /usr/include/node-12/bin/npm install && \
+    - /usr/include/node-12/bin/npm run buildFrontend && \
     - sudo /bin/systemctl restart acc-server-gui.service

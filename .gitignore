@@ -3,3 +3,4 @@
 /settings.json
 /.vscode
 /results
+/public/**/*.min.*
