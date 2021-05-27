@@ -26,6 +26,15 @@
   src: url('/fonts/oswald-normal-400.woff2') format('woff2')
 }
 
+@font-face {
+  font-family: 'JetBrainsMono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2')
+}
+
+
 *,
 *::before,
 *::after {
@@ -396,15 +405,28 @@ fieldset {
 }
 
 #logs {
-  font-family: Consolas, monospace;
+  font-family: 'JetBrainsMono', Consolas, monospace;
+  font-size: .8rem;
   text-align: left;
-  width: min(100%, 96ch);
+  width: min(100%, 150ch);
   height: clamp(500px, 576px, 90vh);
   word-break: break-word;
   overflow-y: scroll;
   margin: 24px auto;
   padding: 8px;
   background-color: var(--bg-darkest-clr)
+}
+
+#logs .err {
+  color: #ff433d
+}
+
+#logs .sys {
+  color: #ff843d
+}
+
+#logs .suc {
+  color: #64ff3d
 }
 
 @media (max-width:800px) {
