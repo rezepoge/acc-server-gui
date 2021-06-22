@@ -1,5 +1,9 @@
 'use strict';
 
+/*global results, basics*/
+
+const MAX_INTEGER = 2147483647;
+
 (() => {
     const resultElems = Array.from(document.getElementsByClassName('result'));
     const timetable = document.getElementById('timetable');
@@ -35,6 +39,7 @@
         eventResults.sessionResult.leaderBoardLines.forEach((line, position) => {
             const lapsByCar = getLapsByCar(eventResults.laps, line.car.carId);
             const avgLap = getAvgLapTime(lapsByCar, line);
+            const isBest = eventResults.sessionResult.bestlap === line.timing.bestLap;
 
             timetableHtml += `<div class="timeTableLine${line.timing.totalTime <= line.timing.bestLap ? ' noValidLap' : ''}" data-carId="${line.car.carId}" data-position="${position}">
                 <div class="driver">
@@ -46,7 +51,7 @@
                     <div class="carModel">${basics.cars.find(car => car.id === line.car.carModel).name}</div>
                 </div>
                 <div class="timing">
-                    <div class="${position === 0 ? ' bestLapAll' : 'bestLap'}" title="Best laptime">${getTime(line.timing.bestLap)}</div>
+                    <div class="${isBest ? ' bestLapAll' : 'bestLap'}" title="Best laptime">${getTime(line.timing.bestLap)}</div>
                     <div class="lastLap${line.timing.bestLap === line.timing.lastLap ? ' bestLap' : ''}" title="Last laptime">${getTime(line.timing.lastLap)}</div>
                     <div class="avgLap" title="Average laptime">${getTime(avgLap)}</div>
                     <div class="totalTime" title="Total time">${getTime(line.timing.totalTime)}</div>
@@ -194,7 +199,7 @@
     }
 
     function getTime(total) {
-        if (!total || typeof total !== 'number') {
+        if (!total || typeof total !== 'number' || total >= MAX_INTEGER) {
             return '--:--.---';
         }
 
