@@ -267,6 +267,23 @@ fieldset {
   grid-row: 1 / 3;
 }
 
+.result .sessionType {
+  flex-basis: 2ch;
+}
+
+.result .driverCount {
+  flex-basis: 7ch;
+  text-align: right;
+}
+
+.result .trackName {
+  flex-basis: 20ch;
+}
+
+.result .date {
+  flex-basis: 15ch;
+}
+
 .driver {
   display: flex;
   gap: .5em;

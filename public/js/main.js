@@ -81,13 +81,13 @@
             adminPassword: inputElems.adminPassword.value,
             spectatorPassword: inputElems.spectatorPassword.value,
             centralEntryListPath: inputElems.centralEntryListPath.value,
-    
+
             carGroup: inputElems.carGroup.value,
             maxCarSlots: parseInt(inputElems.maxCarSlots.value),
             trackMedalsRequirement: parseInt(inputElems.trackMedalsRequirement.value),
             safetyRatingRequirement: parseInt(inputElems.safetyRatingRequirement.value),
             racecraftRatingRequirement: parseInt(inputElems.racecraftRatingRequirement.value),
-    
+
             isRaceLocked: inputElems.isRaceLocked.checked === true ? 1 : 0,
             shortFormationLap: inputElems.shortFormationLap.checked === true ? 1 : 0,
             dumpLeaderboards: inputElems.dumpLeaderboards.checked === true ? 1 : 0,
@@ -265,9 +265,11 @@
                     .replace(/(RegisterToLobby succeeded|Lobby accepted connection<\/?br>)/g, '<span class="suc">$1</span>');
 
                 elems.logs.innerHTML = logs;
+
                 if (scrollToBottom) {
                     elems.logs.scrollTop = elems.logs.scrollHeight;
                 }
+                
                 elems.logs.style.color = 'var(--font-clr)';
             }).catch(console.error);
     };

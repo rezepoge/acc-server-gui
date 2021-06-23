@@ -56,16 +56,16 @@
       fieldset
         legend  Weather
         .SubFormRow
-          label(for="ambientTemp") Avg. Ambient Temp
+          label(for="ambientTemp") Avg. Ambient Temp (°C)
           input#ambientTemp(type="number" min="-10" max="45" value=accConfig.event.ambientTemp)
         .SubFormRow
-          label(for="cloudLevel") Cloud Level
+          label(for="cloudLevel") Cloud Level (0 - 1)
           input#cloudLevel(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.cloudLevel)
         .SubFormRow
-          label(for="rain") Rain Level
+          label(for="rain") Rain Level (0 - 1)
           input#rain(type="number" min="0.0" max="1.0" step="0.1" value=accConfig.event.rain)
         .SubFormRow
-          label(for="weatherRandomness") Weather Randomness
+          label(for="weatherRandomness") Randomness (0 - 7)
           input#weatherRandomness(type="number" min="0" max="7" value=accConfig.event.weatherRandomness)
     .SubFormColumn
       fieldset
