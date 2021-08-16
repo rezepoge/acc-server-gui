@@ -27,232 +27,201 @@
         "displayName": "Sunday"
     }],
     "formationLapTypes": [{
-            "id": 5,
-            "displayName": "short"
-        },
-        {
-            "id": 4,
-            "displayName": "one free"
-        },
-        {
-            "id": 3,
-            "displayName": "default"
-        },
-        {
-            "id": 1,
-            "displayName": "old limiter lap"
-        },
-        {
-            "id": 0,
-            "displayName": "free"
-        }
-    ],
+        "id": 5,
+        "displayName": "short"
+    }, {
+        "id": 4,
+        "displayName": "one free"
+    }, {
+        "id": 3,
+        "displayName": "default"
+    }, {
+        "id": 1,
+        "displayName": "old limiter lap"
+    }, {
+        "id": 0,
+        "displayName": "free"
+    }],
     "tracks": [{
-            "name": "monza",
-            "displayName": "Monza 2018",
-            "boxes": 29
-        },
-        {
-            "name": "zolder",
-            "displayName": "Zolder 2018",
-            "boxes": 34
-        },
-        {
-            "name": "brands_hatch",
-            "displayName": "Brands Hatch 2018",
-            "boxes": 32
-        },
-        {
-            "name": "silverstone",
-            "displayName": "Silverstone 2018",
-            "boxes": 36
-        },
-        {
-            "name": "paul_ricard",
-            "displayName": "Paul Ricard 2018",
-            "boxes": 33
-        },
-        {
-            "name": "misano",
-            "displayName": "Misano 2018",
-            "boxes": 30
-        },
-        {
-            "name": "spa",
-            "displayName": "Spa 2018",
-            "boxes": 82
-        },
-        {
-            "name": "nurburgring",
-            "displayName": "Nürburgring 2018",
-            "boxes": 30
-        },
-        {
-            "name": "barcelona",
-            "displayName": "Barcelona 2018",
-            "boxes": 29
-        },
-        {
-            "name": "hungaroring",
-            "displayName": "Hungaroring 2018",
-            "boxes": 27
-        },
-        {
-            "name": "zandvoort",
-            "displayName": "Zandvoort 2018",
-            "boxes": 25
-        },
-        {
-            "name": "monza_2019",
-            "displayName": "Monza 2019",
-            "boxes": 29
-        },
-        {
-            "name": "zolder_2019",
-            "displayName": "Zolder 2019",
-            "boxes": 34
-        },
-        {
-            "name": "brands_hatch_2019",
-            "displayName": "Brands Hatch 2019",
-            "boxes": 32
-        },
-        {
-            "name": "silverstone_2019",
-            "displayName": "Silverstone 2019",
-            "boxes": 36
-        },
-        {
-            "name": "paul_ricard_2019",
-            "displayName": "Paul Ricard 2019",
-            "boxes": 33
-        },
-        {
-            "name": "misano_2019",
-            "displayName": "Misano 2019",
-            "boxes": 30
-        },
-        {
-            "name": "spa_2019",
-            "displayName": "Spa 2019",
-            "boxes": 82
-        },
-        {
-            "name": "nurburgring_2019",
-            "displayName": "Nürburgring 2019",
-            "boxes": 30
-        },
-        {
-            "name": "barcelona_2019",
-            "displayName": "Barcelona 2019",
-            "boxes": 29
-        },
-        {
-            "name": "hungaroring_2019",
-            "displayName": "Hungaroring 2019",
-            "boxes": 27
-        },
-        {
-            "name": "zandvoort_2019",
-            "displayName": "Zandvoort 2019",
-            "boxes": 25
-        },
-        {
-            "name": "kyalami_2019",
-            "displayName": "Kyalami 2019",
-            "boxes": 40
-        },
-        {
-            "name": "mount_panorama_2019",
-            "displayName": "Mount Panorama 2019",
-            "boxes": 36
-        },
-        {
-            "name": "suzuka_2019",
-            "displayName": "Suzuka 2019",
-            "boxes": 51
-        },
-        {
-            "name": "laguna_seca_2019",
-            "displayName": "Laguna Seca 2019",
-            "boxes": 30
-        },
-        {
-            "name": "monza_2020",
-            "displayName": "Monza 2020",
-            "boxes": 29
-        },
-        {
-            "name": "zolder_2020",
-            "displayName": "Zolder 2020",
-            "boxes": 34
-        },
-        {
-            "name": "brands_hatch_2020",
-            "displayName": "Brands Hatch 2020",
-            "boxes": 32
-        },
-        {
-            "name": "silverstone_2020",
-            "displayName": "Silverstone 2020",
-            "boxes": 36
-        },
-        {
-            "name": "paul_ricard_2020",
-            "displayName": "Paul Ricard 2020",
-            "boxes": 33
-        },
-        {
-            "name": "misano_2020",
-            "displayName": "Misano 2020",
-            "boxes": 30
-        },
-        {
-            "name": "spa_2020",
-            "displayName": "Spa 2020",
-            "boxes": 82
-        },
-        {
-            "name": "nurburgring_2020",
-            "displayName": "Nürburgring 2020",
-            "boxes": 30
-        },
-        {
-            "name": "barcelona_2020",
-            "displayName": "Barcelona 2020",
-            "boxes": 29
-        },
-        {
-            "name": "hungaroring_2020",
-            "displayName": "Hungaroring 2020",
-            "boxes": 27
-        },
-        {
-            "name": "zandvoort_2020",
-            "displayName": "Zandvoort 2020",
-            "boxes": 25
-        },
-        {
-            "name": "imola_2020",
-            "displayName": "Imola 2020",
-            "boxes": 30
-        },
-        {
-            "name": "oulton_park_2019",
-            "displayName": "Oulton Park 2019",
-            "boxes": 28
-        },
-        {
-            "name": "donington_2019",
-            "displayName": "Donington Park 2019",
-            "boxes": 37
-        },
-        {
-            "name": "snetterton_2019",
-            "displayName": "Snetterton 2019",
-            "boxes": 26
-        }
-    ],
+        "displayName": "2018",
+        "placeholder": true
+    }, {
+        "name": "monza",
+        "displayName": "Monza 2018",
+        "boxes": 29
+    }, {
+        "name": "zolder",
+        "displayName": "Zolder 2018",
+        "boxes": 34
+    }, {
+        "name": "brands_hatch",
+        "displayName": "Brands Hatch 2018",
+        "boxes": 32
+    }, {
+        "name": "silverstone",
+        "displayName": "Silverstone 2018",
+        "boxes": 36
+    }, {
+        "name": "paul_ricard",
+        "displayName": "Paul Ricard 2018",
+        "boxes": 33
+    }, {
+        "name": "misano",
+        "displayName": "Misano 2018",
+        "boxes": 30
+    }, {
+        "name": "spa",
+        "displayName": "Spa 2018",
+        "boxes": 82
+    }, {
+        "name": "nurburgring",
+        "displayName": "Nürburgring 2018",
+        "boxes": 30
+    }, {
+        "name": "barcelona",
+        "displayName": "Barcelona 2018",
+        "boxes": 29
+    }, {
+        "name": "hungaroring",
+        "displayName": "Hungaroring 2018",
+        "boxes": 27
+    }, {
+        "name": "zandvoort",
+        "displayName": "Zandvoort 2018",
+        "boxes": 25
+    }, {
+        "displayName": "2019",
+        "placeholder": true
+    }, {
+        "name": "monza_2019",
+        "displayName": "Monza 2019",
+        "boxes": 29
+    }, {
+        "name": "zolder_2019",
+        "displayName": "Zolder 2019",
+        "boxes": 34
+    }, {
+        "name": "brands_hatch_2019",
+        "displayName": "Brands Hatch 2019",
+        "boxes": 32
+    }, {
+        "name": "silverstone_2019",
+        "displayName": "Silverstone 2019",
+        "boxes": 36
+    }, {
+        "name": "paul_ricard_2019",
+        "displayName": "Paul Ricard 2019",
+        "boxes": 33
+    }, {
+        "name": "misano_2019",
+        "displayName": "Misano 2019",
+        "boxes": 30
+    }, {
+        "name": "spa_2019",
+        "displayName": "Spa 2019",
+        "boxes": 82
+    }, {
+        "name": "nurburgring_2019",
+        "displayName": "Nürburgring 2019",
+        "boxes": 30
+    }, {
+        "name": "barcelona_2019",
+        "displayName": "Barcelona 2019",
+        "boxes": 29
+    }, {
+        "name": "hungaroring_2019",
+        "displayName": "Hungaroring 2019",
+        "boxes": 27
+    }, {
+        "name": "zandvoort_2019",
+        "displayName": "Zandvoort 2019",
+        "boxes": 25
+    }, {
+        "displayName": "2020",
+        "placeholder": true
+    }, {
+        "name": "monza_2020",
+        "displayName": "Monza 2020",
+        "boxes": 29
+    }, {
+        "name": "zolder_2020",
+        "displayName": "Zolder 2020",
+        "boxes": 34
+    }, {
+        "name": "brands_hatch_2020",
+        "displayName": "Brands Hatch 2020",
+        "boxes": 32
+    }, {
+        "name": "silverstone_2020",
+        "displayName": "Silverstone 2020",
+        "boxes": 36
+    }, {
+        "name": "paul_ricard_2020",
+        "displayName": "Paul Ricard 2020",
+        "boxes": 33
+    }, {
+        "name": "misano_2020",
+        "displayName": "Misano 2020",
+        "boxes": 30
+    }, {
+        "name": "spa_2020",
+        "displayName": "Spa 2020",
+        "boxes": 82
+    }, {
+        "name": "nurburgring_2020",
+        "displayName": "Nürburgring 2020",
+        "boxes": 30
+    }, {
+        "name": "barcelona_2020",
+        "displayName": "Barcelona 2020",
+        "boxes": 29
+    }, {
+        "name": "hungaroring_2020",
+        "displayName": "Hungaroring 2020",
+        "boxes": 27
+    }, {
+        "name": "zandvoort_2020",
+        "displayName": "Zandvoort 2020",
+        "boxes": 25
+    }, {
+        "name": "imola_2020",
+        "displayName": "Imola 2020",
+        "boxes": 30
+    }, {
+        "displayName": "International GT",
+        "placeholder": true
+    }, {
+        "name": "kyalami_2019",
+        "displayName": "Kyalami 2019",
+        "boxes": 40
+    }, {
+        "name": "mount_panorama_2019",
+        "displayName": "Mount Panorama 2019",
+        "boxes": 36
+    }, {
+        "name": "suzuka_2019",
+        "displayName": "Suzuka 2019",
+        "boxes": 51
+    }, {
+        "name": "laguna_seca_2019",
+        "displayName": "Laguna Seca 2019",
+        "boxes": 30
+    }, {
+        "displayName": "British DLC",
+        "placeholder": true
+    }, {
+        "name": "oulton_park_2019",
+        "displayName": "Oulton Park 2019",
+        "boxes": 28
+    }, {
+        "name": "donington_2019",
+        "displayName": "Donington Park 2019",
+        "boxes": 37
+    }, {
+        "name": "snetterton_2019",
+        "displayName": "Snetterton 2019",
+        "boxes": 26
+    }],
     "cars": [{
         "id": 0,
         "name": "Porsche 991 GT3 R",
